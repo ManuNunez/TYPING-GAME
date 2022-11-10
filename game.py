@@ -15,7 +15,7 @@ user = "default"
 lista1=[]
 lista2=[]
 lista3=[]
-,
+
 def login ():
     log_user = input("INTRODUZCA SU USUARIO :")
     log_password = input("INTRODUZCA SU CONTRASEÑA")
@@ -61,20 +61,20 @@ def scores():
 
 #Functions dific
 def dificultad (dif):
-    if dif== lista1
-    cantidad= random(5-10)
-    for i in range(0,cantidad)
-    print(lista1) 
+    if dif == lista1 :
+        cantidad= random(5-10)
+        for i in range(0,cantidad):
+            print(lista1) 
 
-    elif dif== lista2
-    cantidad= random(5-10)
-    for i in range(0,cantidad)
-    print(lista2) 
+    elif dif== lista2 :
+        cantidad= random(5-10)
+        for i in range(0,cantidad):
+            print(lista2) 
 
-    elif dif== lista3
-    cantidad= random(5-10)
-    for i in range(0,cantidad)
-    print(lista3) 
+    elif dif== lista3 :
+        cantidad= random(5-10)
+        for i in range(0,cantidad):
+            print(lista3) 
 
 def game ():
     pass
