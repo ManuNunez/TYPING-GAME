@@ -9,8 +9,13 @@ users_login = [["super usuario", "123"]]
 users = ["super usuario",]
 users_scores = [["super usuario", "0 : 0", "ratio : 0"]]
 user = "default"
-#function login
 
+#function login
+#listas de palabras
+lista1=[]
+lista2=[]
+lista3=[]
+,
 def login ():
     log_user = input("INTRODUZCA SU USUARIO :")
     log_password = input("INTRODUZCA SU CONTRASEÑA")
@@ -53,6 +58,26 @@ def scores():
     pass
 
 #function  game
+
+#Functions dific
+def dificultad (dif):
+    if dif== lista1
+    cantidad= random(5-10)
+    for i in range(0,cantidad)
+    print(lista1) 
+
+    elif dif== lista2
+    cantidad= random(5-10)
+    for i in range(0,cantidad)
+    print(lista2) 
+
+    elif dif== lista3
+    cantidad= random(5-10)
+    for i in range(0,cantidad)
+    print(lista3) 
+
+def game ():
+    pass
 
 def game ():
     pass
