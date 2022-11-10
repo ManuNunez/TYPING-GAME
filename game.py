@@ -75,10 +75,10 @@ def menu(user_menu):
         print("\033[1;34m"+"    \____/ \____/|______\_____|\____/  |_____/|______| |_|  |_|______\_____/_/    \_\_| \_|\____/ \_____|_|  \_\/_/    \_\_|    |_____/_/    \_\ ")  
         print ("BIENVENIDO AL JUEGO DE LOS AMIGUELADOS")
         print ("eliga una opcion para continuar")
-        print ("1.- LOGIN")
-        print ("2.- SIGN UP")
-        print ("3.- SCORES")
-        print ("4.- EXIT")
+        print ("\033[1;37m"+"1.- LOGIN")
+        print ("\033[1;37m"+"2.- SIGN UP")
+        print ("\033[1;37m"+"3.- SCORES")
+        print ("\033[1;37m"+"4.- EXIT")
 
         answer = int(input())
 
@@ -105,10 +105,10 @@ def menu(user_menu):
         print("\033[1;34m"+"    \____/ \____/|______\_____|\____/  |_____/|______| |_|  |_|______\_____/_/    \_\_| \_|\____/ \_____|_|  \_\/_/    \_\_|    |_____/_/    \_\ ")  
         print ("BIENVENIDO {} AL JUEGO DE LOS AMIGUELADOS" .format(user))
         print ("eliga una opcion para continuar")
-        print ("1.- JUGAR")
-        print ("2.- SCORES")
-        print ("2.- LOGOUT")
-        print ("4.- EXIT")
+        print ("\033[1;37m"+"1.- JUGAR")
+        print ("\033[1;37m"+"2.- SCORES")
+        print ("\033[1;37m"+"2.- LOGOUT")
+        print ("\033[1;37m"+"4.- EXIT")
 
         if answer == 0:
             #ENTER SA MODE
