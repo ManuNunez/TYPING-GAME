@@ -8,12 +8,16 @@ import getpass
 users_login = [["super usuario", "123"]]
 users = ["super usuario",]
 users_scores = [["super usuario", "0 : 0", "ratio : 0"]]
-
+user = "default"
 #function login
 
 def login ():
-    pass
-
+    log_user = input("INTRODUZCA SU USUARIO :")
+    log_password = input("INTRODUZCA SU CONTRASEÑA")
+    log =  [log_user, log_password]
+    if log in users_login:
+        user = log_user
+        menu(user)
 #function sign_up
 
 def sign_up():
@@ -34,7 +38,7 @@ def sign_up():
         users_scores.append(Push_User_Score)
 
 
-def log_out():
+def log_out(user_logout):
     user = "default"
     menu()
 #funtion scores
@@ -54,9 +58,9 @@ def game ():
 
 
 #main menu
-user = "default"
-def menu():
-    if user == "default":
+
+def menu(user_menu):
+    if user_menu == "default":
         print ("BIENVENIDO AL JUEGO DE MECANOGRAFIA DE LOS AMIGUELADOS")
         print ("eliga una opcion para continuar")
         print ("1.- LOGIN")
@@ -80,7 +84,7 @@ def menu():
             pass
         else:
             print ("LA OPCION MARCADA ES INEXISTENTE")
-    if user in users:
+    if user_menu in users:
         print ("BIENVENIDO {} AL JUEGO DE MECANOGRAFIA DE LOS AMIGUELADOS" .format(user))
         print ("eliga una opcion para continuar")
         print ("1.- JUGAR")
@@ -96,11 +100,11 @@ def menu():
         elif answer == 2:
             pass
         elif answer == 3:
-            pass
+            log_out(user)
         elif answer == 4:
             pass
         else:
             print ("LA OPCION MARCADA ES INEXISTENTE")
 
 
-menu()
+menu(user)
