@@ -28,10 +28,15 @@ def sign_up():
 
     else:
         Push_User = [New_User, pasword]
+        Push_User_Score = [New_User, "0:0", "ratio : 0", "Dificulty : NULL"]
+        users.append(New_User)
+        users_login.append(Push_User)
+        users_scores.append(Push_User_Score)
 
 
-        
-
+def log_out():
+    user = "default"
+    menu()
 #funtion scores
 
 def scores():
@@ -42,50 +47,60 @@ def scores():
 def game ():
     pass
 
+
+
+
+
+
+
 #main menu
-user = users[0]
-if user == users[0]:
-    print ("BIENVENIDO AL JUEGO DE MECANOGRAFIA DE LOS AMIGUELADOS")
-    print ("eliga una opcion para continuar")
-    print ("1.- LOGIN")
-    print ("2.- SIGN UP")
-    print ("3.- SCORES")
-    print ("4.- EXIT")
+user = "default"
+def menu():
+    if user == "default":
+        print ("BIENVENIDO AL JUEGO DE MECANOGRAFIA DE LOS AMIGUELADOS")
+        print ("eliga una opcion para continuar")
+        print ("1.- LOGIN")
+        print ("2.- SIGN UP")
+        print ("3.- SCORES")
+        print ("4.- EXIT")
 
-    answer = int(input())
+        answer = int(input())
 
-    if answer == 0:
-        #ENTER SA MODE
-        pass
-    elif answer == 1:
-        pass
-    elif answer == 2:
-        sign_up
+        if answer == 0:
+            #ENTER SA MODE
+            pass
+        elif answer == 1:
+            pass
+        elif answer == 2:
+            sign_up()
 
-    elif answer == 3:
-        pass
-    elif answer == 4:
-        pass
-    else:
-        print ("LA OPCION MARCADA ES INEXISTENTE")
-if user in users:
-    print ("BIENVENIDO {} AL JUEGO DE MECANOGRAFIA DE LOS AMIGUELADOS" .format(user))
-    print ("eliga una opcion para continuar")
-    print ("1.- JUGAR")
-    print ("2.- SCORES")
-    print ("2.- LOGOUT")
-    print ("4.- EXIT")
+        elif answer == 3:
+            pass
+        elif answer == 4:
+            pass
+        else:
+            print ("LA OPCION MARCADA ES INEXISTENTE")
+    if user in users:
+        print ("BIENVENIDO {} AL JUEGO DE MECANOGRAFIA DE LOS AMIGUELADOS" .format(user))
+        print ("eliga una opcion para continuar")
+        print ("1.- JUGAR")
+        print ("2.- SCORES")
+        print ("2.- LOGOUT")
+        print ("4.- EXIT")
 
-    if answer == 0:
-        #ENTER SA MODE
-        pass
-    elif answer == 1:
-        pass
-    elif answer == 2:
-        pass
-    elif answer == 3:
-        pass
-    elif answer == 4:
-        pass
-    else:
-        print ("LA OPCION MARCADA ES INEXISTENTE")
+        if answer == 0:
+            #ENTER SA MODE
+            pass
+        elif answer == 1:
+            pass
+        elif answer == 2:
+            pass
+        elif answer == 3:
+            pass
+        elif answer == 4:
+            pass
+        else:
+            print ("LA OPCION MARCADA ES INEXISTENTE")
+
+
+menu()
