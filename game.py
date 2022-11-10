@@ -1,12 +1,13 @@
 import random
 import time
-
+from IPython.display import clear_output
+import getpass
 
 #DBs
 
-users_login = []
-users = ["default_user", "super usuario",]
-users_scores = []
+users_login = [["super usuario", "123"]]
+users = ["super usuario",]
+users_scores = [["super usuario", "0 : 0", "ratio : 0"]]
 
 #function login
 
@@ -16,7 +17,20 @@ def login ():
 #function sign_up
 
 def sign_up():
-    pass
+    time.sleep(1)
+    clear_output()
+    print("PARA REGISTRARSE INGRESE UN USUARIO Y CONTRASEÑA")
+    New_User = input("USUARIO : ")
+    pasword = getpass.getpass("CONTRASEÑA : ")
+
+    if New_User in users:
+        print("LO SENTIMOS PERO ESE USUARIO YA ESTA OCUPADO")
+
+    else:
+        Push_User = [New_User, pasword]
+
+
+        
 
 #funtion scores
 
@@ -46,7 +60,8 @@ if user == users[0]:
     elif answer == 1:
         pass
     elif answer == 2:
-        pass
+        sign_up
+
     elif answer == 3:
         pass
     elif answer == 4:
