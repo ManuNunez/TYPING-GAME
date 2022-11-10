@@ -9,12 +9,7 @@ users_login = [["super usuario", "123"]]
 users = ["super usuario",]
 users_scores = [["super usuario", "0 : 0", "ratio : 0"]]
 user = "default"
-
 #function login
-#listas de palabras
-lista1=[]
-lista2=[]
-lista3=[]
 
 def login ():
     log_user = input("INTRODUZCA SU USUARIO :")
@@ -59,26 +54,6 @@ def scores():
 
 #function  game
 
-#Functions dific
-def dificultad (dif):
-    if dif == lista1 :
-        cantidad= random(5-10)
-        for i in range(0,cantidad):
-            print(lista1) 
-
-    elif dif== lista2 :
-        cantidad= random(5-10)
-        for i in range(0,cantidad):
-            print(lista2) 
-
-    elif dif== lista3 :
-        cantidad= random(5-10)
-        for i in range(0,cantidad):
-            print(lista3) 
-
-def game ():
-    pass
-
 def game ():
     pass
 
@@ -98,12 +73,13 @@ def menu(user_menu):
         print("\033[1;34m"+"    _   | | |  | |  __|| | |_ | |  | | | |  | |  __|   | |\/| |  __|| |      / /\ \ | . ` | |  | | | |_ |  _  /   / /\ \ |  __|   | |   / /\ \  ")
         print("\033[1;34m"+"   | |__| | |__| | |___| |__| | |__| | | |__| | |____  | |  | | |___| |____ / ____ \| |\  | |__| | |__| | | \ \  / ____ \| |     _| |_ / ____ \ ")
         print("\033[1;34m"+"    \____/ \____/|______\_____|\____/  |_____/|______| |_|  |_|______\_____/_/    \_\_| \_|\____/ \_____|_|  \_\/_/    \_\_|    |_____/_/    \_\ ")  
-        print ("BIENVENIDO AL JUEGO DE LOS AMIGUELADOS")
-        print ("eliga una opcion para continuar")
-        print ("\033[1;37m"+"1.- LOGIN")
-        print ("\033[1;37m"+"2.- SIGN UP")
-        print ("\033[1;37m"+"3.- SCORES")
-        print ("\033[1;37m"+"4.- EXIT")
+        print("")
+        print("                                            ~~BIENVENIDO AL JUEGO DE LOS AMIGUELADOS~~")
+        print("\033[1;37m"+"Elija una opcion para continuar: ")
+        print("\033[1;37m"+"1.- LOGIN")
+        print("\033[1;37m"+"2.- SIGN UP")
+        print("\033[1;37m"+"3.- SCORES")
+        print("\033[1;37m"+"4.- EXIT")
 
         answer = int(input())
 
@@ -128,12 +104,13 @@ def menu(user_menu):
         print("\033[1;34m"+"    _   | | |  | |  __|| | |_ | |  | | | |  | |  __|   | |\/| |  __|| |      / /\ \ | . ` | |  | | | |_ |  _  /   / /\ \ |  __|   | |   / /\ \  ")
         print("\033[1;34m"+"   | |__| | |__| | |___| |__| | |__| | | |__| | |____  | |  | | |___| |____ / ____ \| |\  | |__| | |__| | | \ \  / ____ \| |     _| |_ / ____ \ ")
         print("\033[1;34m"+"    \____/ \____/|______\_____|\____/  |_____/|______| |_|  |_|______\_____/_/    \_\_| \_|\____/ \_____|_|  \_\/_/    \_\_|    |_____/_/    \_\ ")  
-        print ("BIENVENIDO {} AL JUEGO DE LOS AMIGUELADOS" .format(user))
-        print ("eliga una opcion para continuar")
-        print ("\033[1;37m"+"1.- JUGAR")
-        print ("\033[1;37m"+"2.- SCORES")
-        print ("\033[1;37m"+"2.- LOGOUT")
-        print ("\033[1;37m"+"4.- EXIT")
+        print("")       
+        print(                                          "BIENVENIDO {} AL JUEGO DE LOS AMIGUELADOS" .format(user))
+        print("\033[1;37m"+"Elija una opcion para continuar: ")
+        print("\033[1;37m"+"1.- JUGAR")
+        print("\033[1;37m"+"2.- SCORES")
+        print("\033[1;37m"+"2.- LOGOUT")
+        print("\033[1;37m"+"4.- EXIT")
 
         if answer == 0:
             #ENTER SA MODE
