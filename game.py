@@ -15,9 +15,15 @@ def login ():
     log_user = input("INTRODUZCA SU USUARIO :")
     log_password = input("INTRODUZCA SU CONTRASEÑA")
     log =  [log_user, log_password]
+    contador = 0
     if log in users_login:
         user = log_user
         menu(user)
+    else:
+        counter = counter + 1
+        print("LOS DATOS UINTRODUCIDOS SON INCORRECTOS")
+        while counter < 3:
+            login()
 #function sign_up
 
 def sign_up():
