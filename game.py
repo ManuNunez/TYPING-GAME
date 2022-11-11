@@ -11,11 +11,11 @@ users_scores = [["super usuario", "0 : 0", "ratio : 0"]]
 user = "default"
 #function login
 
-def login ():
+def login (user_login):
     log_user = input("INTRODUZCA SU USUARIO :")
     log_password = input("INTRODUZCA SU CONTRASEÑA")
     log =  [log_user, log_password]
-    contador = 0
+    counter = 0
     if log in users_login:
         user = log_user
         menu(user)
@@ -23,7 +23,7 @@ def login ():
         counter = counter + 1
         print("LOS DATOS UINTRODUCIDOS SON INCORRECTOS")
         while counter < 3:
-            login()
+            login(user)
 #function sign_up
 
 def sign_up():
@@ -46,7 +46,7 @@ def sign_up():
 
 def log_out(user_logout):
     user = "default"
-    menu()
+    menu(user)
 #funtion scores
 
 def scores():
