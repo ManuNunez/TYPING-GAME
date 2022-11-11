@@ -116,7 +116,7 @@ def menu(user_menu):
         print("\033[1;37m"+"2.- LOGOUT")
         print("\033[1;37m"+"4.- EXIT")
 
-        answer = input ("SELECIONE LA OPCION QUE DESEE")
+        answer = int(input ("SELECIONE LA OPCION QUE DESEE"))
         if answer == 1:
             pass
         elif answer == 2:
