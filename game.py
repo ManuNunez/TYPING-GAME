@@ -42,6 +42,10 @@ def sign_up():
         users.append(New_User)
         users_login.append(Push_User)
         users_scores.append(Push_User_Score)
+        time.sleep(1)
+        clear_output()
+        user = New_User
+        menu(users)
 
 
 def log_out(user_logout):
@@ -112,10 +116,8 @@ def menu(user_menu):
         print("\033[1;37m"+"2.- LOGOUT")
         print("\033[1;37m"+"4.- EXIT")
 
-        if answer == 0:
-            #ENTER SA MODE
-            pass
-        elif answer == 1:
+        answer = input ("SELECIONE LA OPCION QUE DESEE")
+        if answer == 1:
             pass
         elif answer == 2:
             pass
