@@ -21,7 +21,7 @@ def login (user_login):
         menu(user)
     else:
         counter = counter + 1
-        print("LOS DATOS UINTRODUCIDOS SON INCORRECTOS")
+        print("LOS DATOS INTRODUCIDOS SON INCORRECTOS")
         while counter < 3:
             login(user)
 #function sign_up
@@ -57,7 +57,13 @@ def scores():
     pass
 
 #function  game
-
+def start_game(user_game):
+    print ("SELECCIONE LA DIFICULTAD DE JUEGO")
+    print ("1- FACIL")
+    print ("2- MEDIO")
+    print ("3- DIFICIL")
+    dificultad = int(input())
+    
 def game ():
     pass
 
@@ -118,7 +124,7 @@ def menu(user_menu):
 
         answer = int(input ("SELECIONE LA OPCION QUE DESEE"))
         if answer == 1:
-            pass
+            start_game(user)
         elif answer == 2:
             pass
         elif answer == 3:
