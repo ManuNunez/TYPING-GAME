@@ -45,7 +45,7 @@ def sign_up():
         time.sleep(1)
         clear_output()
         user = New_User
-        menu(users)
+        menu(user)
 
 
 def log_out(user_logout):
@@ -63,7 +63,7 @@ def start_game(user_game):
     print ("2- MEDIO")
     print ("3- DIFICIL")
     dificultad = int(input())
-    
+    game(dificultad)
 def game ():
     pass
 
