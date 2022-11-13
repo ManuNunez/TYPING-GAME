@@ -29,9 +29,17 @@ def login (user_login):
 def sign_up():
     time.sleep(1)
     clear_output()
-    print("PARA REGISTRARSE INGRESE UN USUARIO Y CONTRASEÑA")
-    New_User = input("USUARIO : ")
-    pasword = getpass.getpass("CONTRASEÑA : ")
+    print("\033[1;34m"+"                                          _____  ______ _____ _____  _____ _______ _____   _____  ")
+    print("\033[1;34m"+"                                         |  __ \|  ____/ ____|_   _|/ ____|__   __|  __ \ / __  \ ")
+    print("\033[1;34m"+"                                         | |__) | |__ | |  __  | | | (___    | |  | |__) | |  | |")
+    print("\033[1;34m"+"                                         |  _  /|  __|| | |_ | | |  \___ \   | |  |  _  /| |  | |")
+    print("\033[1;34m"+"                                         | | \ \| |___| |__| |_| |_ ____) |  | |  | | \ \| |__| |")
+    print("\033[1;34m"+"                                         |_|  \_\______\_____|_____|_____/   |_|  |_|  \_\\_____/")     
+    print("")
+    print("\033[0;37m"+"                                          ~~PARA REGISTRARSE INGRESE UN USUARIO Y CONTRASEÑA~~")
+    print("\033[0;37m")
+    New_User = input("USUARIO: ")
+    pasword = getpass.getpass("CONTRASEÑA: ")
 
     if New_User in users:
         print("LO SENTIMOS PERO ESE USUARIO YA ESTA OCUPADO")
