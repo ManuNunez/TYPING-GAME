@@ -12,6 +12,14 @@ user = "default"
 #function login
 
 def login (user_login):
+    print("\033[1;34m"+"                          _____ _   _ _____ _____ _____          _____        _____ ______  _____ _____ ____  _   _ ")
+    print("\033[1;34m"+"                         |_   _| \ | |_   _/ ____|_   _|   /\   |  __ \      / ____|  ____|/ ____|_   _/ __ \| \ | |")
+    print("\033[1;34m"+"                           | | |  \| | | || |      | |    /  \  | |__) |    | (___ | |__  | (___   | || |  | |  \| |")
+    print("\033[1;34m"+"                           | | | . ` | | || |      | |   / /\ \ |  _  /      \___ \|  __|  \___ \  | || |  | | . ` |")
+    print("\033[1;34m"+"                          _| |_| |\  |_| || |____ _| |_ / ____ \| | \ \      ____) | |____ ____) |_| || |__| | |\  |")
+    print("\033[1;34m"+"                         |_____|_| \_|_____\_____|_____/_/    \_\_|  \_\    |_____/|______|_____/|_____\____/|_| \_|")
+    print("")                                                                                              
+    print("\033[0;37m"+"                                          ~~PARA INICIAR SESION INGRESE SU USUARIO Y CONTRASEÑA~~")    
     log_user = input("INTRODUZCA SU USUARIO :")
     log_password = input("INTRODUZCA SU CONTRASEÑA")
     log =  [log_user, log_password]
