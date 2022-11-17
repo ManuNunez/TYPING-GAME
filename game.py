@@ -80,6 +80,21 @@ def start_game(user_game):
     print ("3- DIFICIL")
     dificultad = int(input())
     game(dificultad)
+
+def comparador(lista_original, lista_usuario):
+    total_score = 0
+    word_score = 0
+    for element in lista_original:
+        original_word = lista_original[element]
+        users_word = lista_usuario[element]
+        for letter in original_word:
+            if original_word[letter] == users_word[letter]:
+                m = m + 1
+            word_score = m/len(original_word)
+        n = n + word_score
+    total_score = n / len(lista_original)
+    return total_score
+    
 def game ():
     pass
 
