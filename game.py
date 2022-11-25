@@ -7,7 +7,7 @@ import getpass
 
 users_login = [["super usuario", "123"]]
 users = ["super usuario",]
-users_scores = [["super usuario", "0 : 0", "ratio : 0"]]
+users_scores = [["manu", "dificulty 0", "0 : 0", "ratio : 0"]]
 user = "default"
 #function login
 
@@ -21,7 +21,7 @@ def login (user_login):
     print("")                                                                                              
     print("\033[0;37m"+"                                          ~~PARA INICIAR SESION INGRESE SU USUARIO Y CONTRASEÑA~~")    
     log_user = input("INTRODUZCA SU USUARIO :")
-    log_password = input("INTRODUZCA SU CONTRASEÑA")
+    log_password = getpass.getpass("INTRODUZCA SU CONTRASEÑA")
     log =  [log_user, log_password]
     counter = 0
     if log in users_login:
@@ -104,6 +104,8 @@ def start_game(user_game):
     print ("3- DIFICIL")
     dificultad = int(input())
     game(dificultad)
+    time.sleep(0.005)
+    clear_output()
 
 def comparador(lista_original, lista_usuario):
     total_score = 0
@@ -119,14 +121,28 @@ def comparador(lista_original, lista_usuario):
     total_score = n / len(lista_original)
     return total_score
     
-def game (difucultad):
-   pass
-
-
-
-
-
-
+def game (dificultad):
+   lista_original = listas(dificultad)
+   lista_user = []
+   time_1 = time.time()
+   for element in lista_original:
+        print (lista_original[element])
+        nueva_palabra = getpass.getpass()
+        lista_user.append(nueva_palabra)
+        time.sleep(0.005)
+        clear_output()
+   time_resoult = time.time() - time_1
+   time_push1 = time_resoult / 60
+   time_push2 = time_resoult % 60 
+   time_format1 = time_push1 + ""
+   time_format2 = time_push2 + ""
+   time_push =  time_format1 + time_format2
+   calificacion = comparador(lista_original, lista_user)
+   ratio = "ratio : " + calificacion
+   dificultad = "dificultad : " + dificultad
+   push_score = [user, dificultad, time_push, ratio]
+   users_scores.append(push_score)
+        
 
 #main menu
 

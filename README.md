@@ -6,3 +6,5 @@ Final proyect made by :
     @AndroMvt
     @VGiancarlo
     @Timex2915
+
+Este proyecto esta hecho para funcionar optimamente en google colab
