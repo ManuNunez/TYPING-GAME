@@ -1,4 +1,4 @@
-import random
+from random import *
 import time
 from IPython.display import clear_output
 import getpass
@@ -13,6 +13,8 @@ user = "default"
 
 
 def login(user_login):
+    time.sleep(0.05)
+    clear_output()
     print("\033[1;34m"+"                          _____ _   _ _____ _____ _____          _____        _____ ______  _____ _____ ____  _   _ ")
     print("\033[1;34m"+"                         |_   _| \ | |_   _/ ____|_   _|   /\   |  __ \      / ____|  ____|/ ____|_   _/ __ \| \ | |")
     print("\033[1;34m"+"                           | | |  \| | | || |      | |    /  \  | |__) |    | (___ | |__  | (___   | || |  | |  \| |")
@@ -37,7 +39,7 @@ def login(user_login):
 
 
 def sign_up():
-    time.sleep(1)
+    time.sleep(0.05)
     clear_output()
     print("\033[1;34m"+"                                          _____  ______ _____ _____  _____ _______ _____   _____  ")
     print("\033[1;34m"+"                                         |  __ \|  ____/ ____|_   _|/ ____|__   __|  __ \ / __  \ ")
@@ -87,19 +89,19 @@ listapalabrasdif = ["lenguaje", "intensidad", "binario", "computadora", "letra",
 def listas(dificultad):
     list = []
     if dificultad == 1:
-        v1 = random(10, 15)
+        v1 = randint(10, 15)
         for i in range(0, v1):
-            list.append(listpalabrasf[random(0, 14)])
+            list.append(listpalabrasf[randint(0, 14)])
 
     elif dificultad == 2:
-        v1 = random(15, 20)
+        v1 = randint(15, 20)
         for i in range(0, v1):
-             list.append(listapalabrasin[random(0, 19)])
+             list.append(listapalabrasin[randint(0, 19)])
 
     elif dificultad == 3:
-        v1 = random(20, 25)
+        v1 = randint(20, 25)
         for i in range(0, v1):
-             list.append(listapalabrasdif[random(0, 24)])
+             list.append(listapalabrasdif[randint(0, 24)])
     return list
 
 # funtion scores
@@ -112,16 +114,22 @@ def inversor():
     scores()
 def sort(arg):
     if arg == 1:
-        users_scores = sorted(users_scores, key=lambda x:[0])
+        newlist = sorted(users_scores, key=lambda x:[0])
+        users_scores = newlist
+        scores()
     elif arg == 2:
-        users_scores = sorted(users_scores, key=lambda x:[1])
+        newlist = sorted(users_scores, key=lambda x:[1])
+        users_scores = newlist
+        scores()
     elif arg == 3:
         users_scores = sorted(users_scores, key=lambda x:[2])
+        users_scores = newlist
+        scores()
     elif arg == 4:
-        users_scores = sorted(users_scores, key=lambda x:[3])
+        newlist = sorted(users_scores, key=lambda x:[3])
+        users_scores = newlist
         inversor()
 
-    scores()
 
 def scores():
     time.sleep(0.005)
@@ -136,7 +144,7 @@ def scores():
     print("ordenar por porcentaje de aciertos : 4")
     sort_arg = int(input())
     if sort_arg == 0 :
-        menu()
+        menu(user)
     elif sort_arg == 1 or sort_arg == 2 or sort_arg == 3 or sort_arg == 4:
         sort(sort_arg)
     elif sort_arg == 5:
@@ -150,6 +158,8 @@ def scores():
 
 
 def start_game(user_game):
+    time.sleep(0.05)
+    clear_output()
     print("SELECCIONE LA DIFICULTAD DE JUEGO")
     print("1- FACIL")
     print("2- MEDIO")
@@ -252,7 +262,7 @@ def menu(user_menu):
         print("\033[1;37m"+"2.- LOGOUT")
         print("\033[1;37m"+"4.- EXIT")
 
-        answer = int(input ("SELECIONE LA OPCION QUE DESEE"))
+        answer = int(input ("SELECIONE LA OPCION QUE DESEE : "))
         if answer == 1:
             start_game(user)
         elif answer == 2:
