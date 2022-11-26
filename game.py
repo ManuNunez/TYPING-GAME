@@ -3,26 +3,27 @@ import time
 from IPython.display import clear_output
 import getpass
 
-#DBs
+# DBs
 
 users_login = [["super usuario", "123"]]
-users = ["super usuario",]
+users = ["super usuario", ]
 users_scores = [["manu", "dificulty 0", "0 : 0", "ratio : 0"]]
 user = "default"
-#function login
+# function login
 
-def login (user_login):
+
+def login(user_login):
     print("\033[1;34m"+"                          _____ _   _ _____ _____ _____          _____        _____ ______  _____ _____ ____  _   _ ")
     print("\033[1;34m"+"                         |_   _| \ | |_   _/ ____|_   _|   /\   |  __ \      / ____|  ____|/ ____|_   _/ __ \| \ | |")
     print("\033[1;34m"+"                           | | |  \| | | || |      | |    /  \  | |__) |    | (___ | |__  | (___   | || |  | |  \| |")
     print("\033[1;34m"+"                           | | | . ` | | || |      | |   / /\ \ |  _  /      \___ \|  __|  \___ \  | || |  | | . ` |")
     print("\033[1;34m"+"                          _| |_| |\  |_| || |____ _| |_ / ____ \| | \ \      ____) | |____ ____) |_| || |__| | |\  |")
     print("\033[1;34m"+"                         |_____|_| \_|_____\_____|_____/_/    \_\_|  \_\    |_____/|______|_____/|_____\____/|_| \_|")
-    print("")                                                                                              
-    print("\033[0;37m"+"                                          ~~PARA INICIAR SESION INGRESE SU USUARIO Y CONTRASEÑA~~")    
+    print("")
+    print("\033[0;37m"+"                                          ~~PARA INICIAR SESION INGRESE SU USUARIO Y CONTRASEÑA~~")
     log_user = input("INTRODUZCA SU USUARIO :")
     log_password = getpass.getpass("INTRODUZCA SU CONTRASEÑA")
-    log =  [log_user, log_password]
+    log = [log_user, log_password]
     counter = 0
     if log in users_login:
         user = log_user
@@ -32,7 +33,8 @@ def login (user_login):
         print("LOS DATOS INTRODUCIDOS SON INCORRECTOS")
         while counter < 3:
             login(user)
-#function sign_up
+# function sign_up
+
 
 def sign_up():
     time.sleep(1)
@@ -42,7 +44,7 @@ def sign_up():
     print("\033[1;34m"+"                                         | |__) | |__ | |  __  | | | (___    | |  | |__) | |  | |")
     print("\033[1;34m"+"                                         |  _  /|  __|| | |_ | | |  \___ \   | |  |  _  /| |  | |")
     print("\033[1;34m"+"                                         | | \ \| |___| |__| |_| |_ ____) |  | |  | | \ \| |__| |")
-    print("\033[1;34m"+"                                         |_|  \_\______\_____|_____|_____/   |_|  |_|  \_\\_____/")     
+    print("\033[1;34m"+"                                         |_|  \_\______\_____|_____|_____/   |_|  |_|  \_\\_____/")
     print("")
     print("\033[0;37m"+"                                          ~~PARA REGISTRARSE INGRESE UN USUARIO Y CONTRASEÑA~~")
     print("\033[0;37m")
@@ -68,44 +70,53 @@ def log_out(user_logout):
     user = "default"
     menu(user)
 
-#Function list
-listpalabrasf = ["agua","diamante","luz","calor","intensidad","ropa","cama","jabón","salida","cansancio","lápiz","saludo","carpeta","leche","silla"]
-listapalabrasin = ["variable","agua","intensidad","lenguaje","numero","cama","codigo","binario","computadora","tecla","carpeta","leche","agua","letra","camara","link","metrica","coordenada"]
-listapalabrasdif = ["lenguaje","intensidad","binario","computadora","letra","camara","complejo","variable","diamante","luz","calor","jabon","salida","carpeta","leche","cortafuegos","paraguas","telescopio","universo","gramatica","parangaricutirimicuaro","celular"]
+
+# Function list
+listpalabrasf = ["agua", "diamante", "luz", "calor", "intensidad", "ropa", "cama",
+    "jabón", "salida", "cansancio", "lápiz", "saludo", "carpeta", "leche", "silla"]
+listapalabrasin = ["variable", "agua", "intensidad", "lenguaje", "numero", "cama", "codigo", "binario",
+    "computadora", "tecla", "carpeta", "leche", "agua", "letra", "camara", "link", "metrica", "coordenada"]
+listapalabrasdif = ["lenguaje", "intensidad", "binario", "computadora", "letra", "camara", "complejo", "variable", "diamante", "luz", "calor",
+    "jabon", "salida", "carpeta", "leche", "cortafuegos", "paraguas", "telescopio", "universo", "gramatica", "parangaricutirimicuaro", "celular"]
+
 
 def listas(dificultad):
     list = []
     if dificultad == 1:
-        v1= random(10-15)
-        for i in range (0,v1):
-            list.append(listpalabrasf[random(0,14)])
-            
+        v1 = random(10-15)
+        for i in range(0, v1):
+            list.append(listpalabrasf[random(0, 14)])
+
     elif dificultad == 2:
-        v1= random(15-20)
-        for i in range (0,v1):
-             list.append(listapalabrasin[random(0,19)])
+        v1 = random(15-20)
+        for i in range(0, v1):
+             list.append(listapalabrasin[random(0, 19)])
 
     elif dificultad == 3:
-        v1=random(20-25)
-        for i in range (0,v1):
-             list.append(listapalabrasdif[random(0,24)])
+        v1 = random(20-25)
+        for i in range(0, v1):
+             list.append(listapalabrasdif[random(0, 24)])
     return list
 
-#funtion scores
+# funtion scores
+
 
 def scores():
     pass
 
-#function  game
+# function  game
+
+
 def start_game(user_game):
-    print ("SELECCIONE LA DIFICULTAD DE JUEGO")
-    print ("1- FACIL")
-    print ("2- MEDIO")
-    print ("3- DIFICIL")
+    print("SELECCIONE LA DIFICULTAD DE JUEGO")
+    print("1- FACIL")
+    print("2- MEDIO")
+    print("3- DIFICIL")
     dificultad = int(input())
     game(dificultad)
     time.sleep(0.005)
     clear_output()
+
 
 def comparador(lista_original, lista_usuario):
     total_score = 0
@@ -120,31 +131,40 @@ def comparador(lista_original, lista_usuario):
         n = n + word_score
     total_score = n / len(lista_original)
     return total_score
-    
-def game (dificultad):
-   lista_original = listas(dificultad)
-   lista_user = []
-   time_1 = time.time()
-   for element in lista_original:
+
+
+def game(dificultad):
+    lista_original = listas(dificultad)
+    lista_user = []
+    time_1 = time.time()
+    for element in lista_original:
         print (lista_original[element])
         nueva_palabra = getpass.getpass()
         lista_user.append(nueva_palabra)
         time.sleep(0.005)
         clear_output()
-   time_resoult = time.time() - time_1
-   time_push1 = time_resoult / 60
-   time_push2 = time_resoult % 60 
-   time_format1 = time_push1 + ""
-   time_format2 = time_push2 + ""
-   time_push =  time_format1 + time_format2
-   calificacion = comparador(lista_original, lista_user)
-   ratio = "ratio : " + calificacion
-   dificultad = "dificultad : " + dificultad
-   push_score = [user, dificultad, time_push, ratio]
-   users_scores.append(push_score)
+    time_resoult = time.time() - time_1
+    time_push1 = time_resoult / 60
+    time_push2 = time_resoult % 60 
+    time_format1 = str(time_push1)
+    time_format2 = str(time_push2)
+    time_push =  time_format1 +" : " + time_format2
+    calificacion = comparador(lista_original, lista_user)
+    ratio = "ratio : " + str(calificacion)
+
+    if dificultad == 1:
+        dificultad = "facil"
+    elif dificultad == 2:
+        dificultad = "media"
+    elif dificultad == 3:
+        dificultad = "dificil"
+    
+    dificultad = "dificultad : " + dificultad
+    push_score = [user, dificultad, time_push, ratio]
+    users_scores.append(push_score)
         
 
-#main menu
+# main menu
 
 def menu(user_menu):
     if user_menu == "default":
@@ -165,7 +185,7 @@ def menu(user_menu):
         answer = int(input())
 
         if answer == 0:
-            #ENTER SA MODE
+            # ENTER SA MODE
             pass
         elif answer == 1:
             pass
