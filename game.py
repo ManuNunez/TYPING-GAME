@@ -87,17 +87,17 @@ listapalabrasdif = ["lenguaje", "intensidad", "binario", "computadora", "letra",
 def listas(dificultad):
     list = []
     if dificultad == 1:
-        v1 = random(10-15)
+        v1 = random(10, 15)
         for i in range(0, v1):
             list.append(listpalabrasf[random(0, 14)])
 
     elif dificultad == 2:
-        v1 = random(15-20)
+        v1 = random(15, 20)
         for i in range(0, v1):
              list.append(listapalabrasin[random(0, 19)])
 
     elif dificultad == 3:
-        v1 = random(20-25)
+        v1 = random(20, 25)
         for i in range(0, v1):
              list.append(listapalabrasdif[random(0, 24)])
     return list
@@ -227,7 +227,7 @@ def menu(user_menu):
         answer = int(input())
 
         if answer == 1:
-            login()
+            login(user)
         elif answer == 2:
             sign_up()
 
