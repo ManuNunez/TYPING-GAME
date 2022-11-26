@@ -103,7 +103,13 @@ def listas(dificultad):
     return list
 
 # funtion scores
-
+def inversor():
+    counter = -1
+    while counter > -5:
+        new_list = new_list.apend(users_scores[counter])
+        counter = counter - 1
+    scores()
+    scores()
 def sort(arg):
     if arg == 1:
         users_scores = sorted(users_scores, key=lambda x:[0])
@@ -113,6 +119,8 @@ def sort(arg):
         users_scores = sorted(users_scores, key=lambda x:[2])
     elif arg == 4:
         users_scores = sorted(users_scores, key=lambda x:[3])
+        inversor()
+
     scores()
 
 def scores():
@@ -131,6 +139,8 @@ def scores():
         menu()
     elif sort_arg == 1 or sort_arg == 2 or sort_arg == 3 or sort_arg == 4:
         sort(sort_arg)
+    elif sort_arg == 5:
+        inversor()
     else :
         print("el argumento introcudiodo es invalido")
 
