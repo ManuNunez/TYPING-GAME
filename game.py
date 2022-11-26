@@ -7,7 +7,7 @@ import getpass
 
 users_login = [["super usuario", "123"]]
 users = ["super usuario", ]
-users_scores = [["manu", "dificulty 0", "0 : 0", "ratio : 0"]]
+users_scores = [["RZL", "dificultad : NULL", "0 : 0", "ratio : 0"]]
 user = "default"
 # function login
 
@@ -48,22 +48,26 @@ def sign_up():
     print("")
     print("\033[0;37m"+"                                          ~~PARA REGISTRARSE INGRESE UN USUARIO Y CONTRASEÑA~~")
     print("\033[0;37m")
+    print("su usuario debe de ser de 3 letras de largo")
     New_User = input("USUARIO: ")
     pasword = getpass.getpass("CONTRASEÑA: ")
+    if len(New_User) == 3:
+        if New_User in users:
+            print("LO SENTIMOS PERO ESE USUARIO YA ESTA OCUPADO")
 
-    if New_User in users:
-        print("LO SENTIMOS PERO ESE USUARIO YA ESTA OCUPADO")
-
+        else:
+            New_User = New_User.upper()
+            Push_User = [New_User, pasword]
+            Push_User_Score = [New_User, "0:0", "ratio : 0", "Dificulty : NULL"]
+            users.append(New_User)
+            users_login.append(Push_User)
+            users_scores.append(Push_User_Score)
+            time.sleep(1)
+            clear_output()
+            user = New_User
+            menu(user)
     else:
-        Push_User = [New_User, pasword]
-        Push_User_Score = [New_User, "0:0", "ratio : 0", "Dificulty : NULL"]
-        users.append(New_User)
-        users_login.append(Push_User)
-        users_scores.append(Push_User_Score)
-        time.sleep(1)
-        clear_output()
-        user = New_User
-        menu(user)
+        print("el usuario que a introducido no tiene la longitud correcta")
 
 
 def log_out(user_logout):
@@ -100,9 +104,17 @@ def listas(dificultad):
 
 # funtion scores
 
+def sort(arg):
+    pass
 
 def scores():
-    pass
+    time.sleep(0.005)
+    clear_output()
+    for elements in users_scores:
+        print("| usuario : {} | {} | {} | {} |".format(elements[0], elements[1],elements[2], elements[3]))
+    print   
+
+
 
 # function  game
 
