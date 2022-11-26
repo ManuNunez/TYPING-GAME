@@ -226,16 +226,13 @@ def menu(user_menu):
 
         answer = int(input())
 
-        if answer == 0:
-            # ENTER SA MODE
-            pass
-        elif answer == 1:
-            pass
+        if answer == 1:
+            login()
         elif answer == 2:
             sign_up()
 
         elif answer == 3:
-            pass
+            scores()
         elif answer == 4:
             pass
         else:
@@ -259,7 +256,7 @@ def menu(user_menu):
         if answer == 1:
             start_game(user)
         elif answer == 2:
-            pass
+            scores()
         elif answer == 3:
             log_out(user)
         elif answer == 4:
