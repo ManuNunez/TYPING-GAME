@@ -105,14 +105,34 @@ def listas(dificultad):
 # funtion scores
 
 def sort(arg):
-    pass
+    if arg == 1:
+        users_scores = sorted(users_scores, key=lambda x:[0])
+    elif arg == 2:
+        users_scores = sorted(users_scores, key=lambda x:[1])
+    elif arg == 3:
+        users_scores = sorted(users_scores, key=lambda x:[2])
+    elif arg == 4:
+        users_scores = sorted(users_scores, key=lambda x:[3])
+    scores()
 
 def scores():
     time.sleep(0.005)
     clear_output()
+    print("para salir presione : 0")
     for elements in users_scores:
         print("| usuario : {} | {} | {} | {} |".format(elements[0], elements[1],elements[2], elements[3]))
-    print   
+    
+    print("ordenar por usuario : 1")
+    print("ordenar por dificultad : 2")
+    print("ordenar por tiempo : 3")
+    print("ordenar por porcentaje de aciertos : 4")
+    sort_arg = int(input())
+    if sort_arg == 0 :
+        menu()
+    elif sort_arg == 1 or sort_arg == 2 or sort_arg == 3 or sort_arg == 4:
+        sort(sort_arg)
+    else :
+        print("el argumento introcudiodo es invalido")
 
 
 
