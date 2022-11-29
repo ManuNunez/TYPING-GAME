@@ -117,22 +117,22 @@ def inversor():
 
 def sort(arg):
     if arg == 1:
-        newlist = sorted(users_scores, key=lambda x:[0])
+        newlist = sorted(users_scores, key=lambda x: x[0])
         users_scores = newlist
         scores()
 
     elif arg == 2:
-        newlist = sorted(users_scores, key=lambda x:[1])
+        newlist = sorted(users_scores, key=lambda x: x[1])
         users_scores = newlist
         scores()
 
     elif arg == 3:
-        users_scores = sorted(users_scores, key=lambda x:[2])
+        users_scores = sorted(users_scores, key=lambda x: x[2])
         users_scores = newlist
         scores()
 
     elif arg == 4:
-        newlist = sorted(users_scores, key=lambda x:[3])
+        newlist = sorted(users_scores, key=lambda x: x[3])
         users_scores = newlist
         inversor()
 
