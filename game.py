@@ -116,6 +116,7 @@ def inversor():
 
 
 def sort(arg):
+    global users_scores
     if arg == 1:
         newlist = sorted(users_scores, key=lambda x: x[0])
         users_scores = newlist
