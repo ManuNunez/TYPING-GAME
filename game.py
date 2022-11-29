@@ -60,7 +60,7 @@ def sign_up():
         else:
             New_User = New_User.upper()
             Push_User = [New_User, pasword]
-            Push_User_Score = [New_User, "0:0", "ratio : 0", "Dificulty : NULL"]
+            Push_User_Score = [New_User, "dificultad : NULL", "0 : 0", "ratio : 0"]
             users.append(New_User)
             users_login.append(Push_User)
             users_scores.append(Push_User_Score)
@@ -78,6 +78,8 @@ def log_out(user_logout):
 
 
 # Function list
+
+
 listpalabrasf = ["agua", "diamante", "luz", "calor", "intensidad", "ropa", "cama",
     "jabón", "salida", "cansancio", "lápiz", "saludo", "carpeta", "leche", "silla"]
 listapalabrasin = ["variable", "agua", "intensidad", "lenguaje", "numero", "cama", "codigo", "binario",
@@ -111,20 +113,24 @@ def inversor():
         new_list = new_list.apend(users_scores[counter])
         counter = counter - 1
     scores()
-    scores()
+
+
 def sort(arg):
     if arg == 1:
         newlist = sorted(users_scores, key=lambda x:[0])
         users_scores = newlist
         scores()
+
     elif arg == 2:
         newlist = sorted(users_scores, key=lambda x:[1])
         users_scores = newlist
         scores()
+
     elif arg == 3:
         users_scores = sorted(users_scores, key=lambda x:[2])
         users_scores = newlist
         scores()
+
     elif arg == 4:
         newlist = sorted(users_scores, key=lambda x:[3])
         users_scores = newlist
@@ -173,14 +179,13 @@ def start_game(user_game):
 def comparador(lista_original, lista_usuario):
     total_score = 0
     word_score = 0
+    m = 0
+    n = 0
     for element in lista_original:
-        original_word = lista_original[element]
-        users_word = lista_usuario[element]
-        for letter in original_word:
-            if original_word[letter] == users_word[letter]:
-                m = m + 1
-            word_score = m/len(original_word)
-        n = n + word_score
+        if element == lista_usuario[m]:
+            n =n + 1
+        m = m + 1
+
     total_score = n / len(lista_original)
     return total_score
 
@@ -190,7 +195,7 @@ def game(dificultad):
     lista_user = []
     time_1 = time.time()
     for element in lista_original:
-        print (lista_original[element])
+        print (element)
         nueva_palabra = getpass.getpass()
         lista_user.append(nueva_palabra)
         time.sleep(0.005)
@@ -229,10 +234,10 @@ def menu(user_menu):
         print("")
         print("                                            ~~BIENVENIDO AL JUEGO DE LOS AMIGUELADOS~~")
         print("\033[1;37m"+"Elija una opcion para continuar: ")
-        print("\033[1;37m"+"1.- LOGIN")
-        print("\033[1;37m"+"2.- SIGN UP")
+        print("\033[1;37m"+"1.- INICIAR SESION")
+        print("\033[1;37m"+"2.- REGISTRARSE")
         print("\033[1;37m"+"3.- SCORES")
-        print("\033[1;37m"+"4.- EXIT")
+        print("\033[1;37m"+"4.- SALIR")
 
         answer = int(input())
 
@@ -259,8 +264,8 @@ def menu(user_menu):
         print("\033[1;37m"+"Elija una opcion para continuar: ")
         print("\033[1;37m"+"1.- JUGAR")
         print("\033[1;37m"+"2.- SCORES")
-        print("\033[1;37m"+"2.- LOGOUT")
-        print("\033[1;37m"+"4.- EXIT")
+        print("\033[1;37m"+"2.- CERRAR SESION")
+        print("\033[1;37m"+"4.- SALIR")
 
         answer = int(input ("SELECIONE LA OPCION QUE DESEE : "))
         if answer == 1:
