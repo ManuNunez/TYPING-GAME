@@ -219,6 +219,7 @@ def game(dificultad):
     dificultad = "dificultad : " + dificultad
     push_score = [user, dificultad, time_push, ratio]
     users_scores.append(push_score)
+    menu(user)
         
 
 # main menu
