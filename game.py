@@ -5,9 +5,9 @@ import getpass
 
 # DBs
 
-users_login = [["super usuario", "123"]]
-users = ["super usuario", ]
-users_scores = [["RZL", "dificultad : NULL", "0 : 0", "ratio : 0"]]
+users_login = [["RZL", "123"]]
+users = ["RZL", ]
+users_scores = [["RZL", "dificultad : NULL", "0 : 0", "ratio : 0"], ["MAN", "dificultad : 1", "0 : 0", "ratio : 1"]]
 user = "default"
 # function login
 
