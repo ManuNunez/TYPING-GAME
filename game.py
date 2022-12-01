@@ -7,7 +7,8 @@ import getpass
 
 users_login = [["RZL", "123"]]
 users = ["RZL", ]
-users_scores = [["RZL", "dificultad : NULL", "0 : 0", "ratio : 0"], ["MAN", "dificultad : 1", "0 : 0", "ratio : 1"]]
+users_scores = [["RZL", "dificultad : NULL", "0 : 0", "pts : 0"], ["MAN", "dificultad : 1", "0 : 0", "pts: 0"]]
+
 user = "default"
 # function login
 
@@ -80,30 +81,26 @@ def log_out(user_logout):
 # Function list
 
 
-listpalabrasf = ["agua", "diamante", "luz", "calor", "intensidad", "ropa", "cama",
-    "jabón", "salida", "cansancio", "lápiz", "saludo", "carpeta", "leche", "silla"]
-listapalabrasin = ["variable", "agua", "intensidad", "lenguaje", "numero", "cama", "codigo", "binario",
-    "computadora", "tecla", "carpeta", "leche", "agua", "letra", "camara", "link", "metrica", "coordenada"]
-listapalabrasdif = ["lenguaje", "intensidad", "binario", "computadora", "letra", "camara", "complejo", "variable", "diamante", "luz", "calor",
-    "jabon", "salida", "carpeta", "leche", "cortafuegos", "paraguas", "telescopio", "universo", "gramatica", "parangaricutirimicuaro", "celular"]
+list_frases_facil = ["inteligencia es la habilidad de adaptarsea al cambio", "quien tiene paciencia tendra lo que desea", "cuando el hombre no se encuentra a si mismo, no encuentra nada", "el exito depende del esfuerzo", "una buena cabeza y un buen corazon son siempre combinaciones formidables"]
+list_frases_inter = ["inteligencia es la habilidad de adaptarsea al cambio", "quien tiene paciencia tendra lo que desea", "cuando el hombre no se encuentra a si mismo, no encuentra nada", "el exito depende del esfuerzo", "una buena cabeza y un buen corazon son siempre combinaciones formidables",
+ "de todos los animales de la creacion el hombre es el unico que toma agua sin tener sed, come sin tener hambre y habla sin tener nada que decir", "todos somos muy ignorantes. lo que ocurre es que no todos ignoramos las misma s cosas", "el placer y la accion hacen que las horas parezcan cortas", "la gente se rie de mi por que soy diferente, yo me rio de ellos por que son todos iguales", "la ocasion hay que crearla, no esperar a que llegue"]
+list_frases_dificil = ["inteligencia es la habilidad de adaptarsea al cambio", "quien tiene paciencia tendra lo que desea", "cuando el hombre no se encuentra a si mismo, no encuentra nada", "el exito depende del esfuerzo", "una buena cabeza y un buen corazon son siempre combinaciones formidables",
+ "de todos los animales de la creacion el hombre es el unico que toma agua sin tener sed, come sin tener hambre y habla sin tener nada que decir", "todos somos muy ignorantes. lo que ocurre es que no todos ignoramos las misma s cosas", "el placer y la accion hacen que las horas parezcan cortas", "la gente se rie de mi por que soy diferente, yo me rio de ellos por que son todos iguales", "la ocasion hay que crearla, no esperar a que llegue", 
+ "educacion es lo que queda despues de olvidar lo que se ha aprendido en la escuela", "adentro del vaticano todo estaa forrado de oro y afuere los pibes estan muriendo de hambre", "la  envidia  es una declaracion de inferioridad", "solo hay una felicidad en la vida, amar y ser amado", "no malgastes tu tiempo pues de esa materia esta formada la vida"]
+
 
 
 def listas(dificultad):
     list = []
     if dificultad == 1:
-        v1 = randint(10, 15)
-        for i in range(0, v1):
-            list.append(listpalabrasf[randint(0, 14)])
-
+        list = list_frases_facil
     elif dificultad == 2:
-        v1 = randint(15, 20)
-        for i in range(0, v1):
-             list.append(listapalabrasin[randint(0, 19)])
-
+        for m in range (0, 5):
+            list = list_frases_inter[randint(0, 10)]
     elif dificultad == 3:
-        v1 = randint(20, 25)
-        for i in range(0, v1):
-             list.append(listapalabrasdif[randint(0, 24)])
+        for m in range (0, 5):
+
+            list = list_frases_dificil[randint(0, 15)]
     return list
 
 # funtion scores
@@ -112,7 +109,7 @@ def inversor():
     while counter > -5:
         new_list = new_list.apend(users_scores[counter])
         counter = counter - 1
-    scores()
+    scores_general()
 
 
 def sort(arg):
@@ -120,17 +117,17 @@ def sort(arg):
     if arg == 1:
         newlist = sorted(users_scores, key=lambda x: x[0])
         users_scores = newlist
-        scores()
+        scores_general()
 
     elif arg == 2:
         newlist = sorted(users_scores, key=lambda x: x[1])
         users_scores = newlist
-        scores()
+        scores_general()
 
     elif arg == 3:
         users_scores = sorted(users_scores, key=lambda x: x[2])
         users_scores = newlist
-        scores()
+        scores_general()
 
     elif arg == 4:
         newlist = sorted(users_scores, key=lambda x: x[3])
@@ -138,7 +135,9 @@ def sort(arg):
         inversor()
 
 
-def scores():
+def scores_particular():
+    pass
+def scores_general():
     time.sleep(0.005)
     clear_output()
     print("para salir presione : 0")
