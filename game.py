@@ -104,6 +104,10 @@ def listas(dificultad):
     return list
 
 # funtion scores
+
+def get_score(errores, dificultad):
+    pass
+
 def inversor():
     counter = -1
     while counter > -5:
@@ -176,17 +180,43 @@ def start_game(user_game):
     clear_output()
 
 
-def comparador(lista_original, lista_usuario):
-    total_score = 0
-    word_score = 0
+def comparador(lista_original, lista_usuario, dificultad):
     m = 0
     n = 0
-    for element in lista_original:
-        if element == lista_usuario[m]:
-            n =n + 1
-        m = m + 1
+    total_score = 0
+    errores = 0
+    for i in range(0, (len(lista_original) - 1)):
+        o = lista_original[i]
+        u = lista_usuario[i]
+        z = 0
+        j = 0
+        for j in range (0, (len(m)-1)):
+            if u[z] == o[j]:
+                pass
 
-    total_score = n / len(lista_original)
+            elif u[z] != o[j] and n[z] == m[j+1]:
+                errores += 1
+                j -= 1
+
+            elif u[z] != o[j] and u[z] == m[j - 1]:
+                errores += 1
+                j += 1
+
+            elif u[z] != o[j] and u[z+1] == o[j + 1]:
+                errores += 1
+            
+            elif u[z] != o[j] and u[z] == m[j + 1]:
+                errores += 1
+                j -= 1
+            
+            elif u[z] == o[j + 1] and u[z + 1] == o[j]:
+                errores += 1
+                j += 1
+                z += 1
+
+    total_score = get_score(errores, dificultad)
+            
+
     return total_score
 
 
@@ -250,7 +280,7 @@ def menu(user_menu):
             sign_up()
 
         elif answer == 3:
-            scores()
+            scores_general()
         elif answer == 4:
             pass
         else:
@@ -274,7 +304,7 @@ def menu(user_menu):
         if answer == 1:
             start_game(user)
         elif answer == 2:
-            scores()
+            scores_general()
         elif answer == 3:
             log_out(user)
         elif answer == 4:
