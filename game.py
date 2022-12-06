@@ -105,8 +105,6 @@ def listas(dificultad):
 
 # funtion scores
 
-def get_score(errores, dificultad):
-    pass
 
 def inversor():
     counter = -1
@@ -185,7 +183,9 @@ def comparador(lista_original, lista_usuario, dificultad):
     n = 0
     total_score = 0
     errores = 0
+    bool = False
     for i in range(0, (len(lista_original) - 1)):
+        errores = 0
         o = lista_original[i]
         u = lista_usuario[i]
         z = 0
@@ -213,10 +213,37 @@ def comparador(lista_original, lista_usuario, dificultad):
                 errores += 1
                 j += 1
                 z += 1
+        
+        if dificultad == 1:
+            
+            if dificultad < 6:
+                total_score += (30 - (errores * 5))
 
-    total_score = get_score(errores, dificultad)
+
+            elif errores >= 6:
+                total_score -= 25
+
+        elif dificultad == 2:
+            if errores < 6:
+                total_score += (50 - (errores * 5))
             
 
+            elif errores >= 6:
+                total_score -= 25
+
+        elif dificultad == 3:
+            if errores < 6:
+                total_score += (70 - (errores * 5))
+
+            elif errores >= 6:
+                total_score -= 25
+        
+        if errores != 0:
+            bool = True
+
+    if bool == False:
+        total_score = total_score * 2        
+            
     return total_score
 
 
@@ -236,17 +263,18 @@ def game(dificultad):
     time_format1 = str(time_push1)
     time_format2 = str(time_push2)
     time_push =  time_format1 +" : " + time_format2
-    calificacion = comparador(lista_original, lista_user)
+    calificacion = comparador(lista_original, lista_user, dificultad)
     ratio = "ratio : " + str(calificacion)
+    dificultad_txt = 0
 
     if dificultad == 1:
-        dificultad = "facil"
+        dificultad_txt = "facil"
     elif dificultad == 2:
-        dificultad = "media"
+        dificultad_txt = "media"
     elif dificultad == 3:
-        dificultad = "dificil"
+        dificultad_txt = "dificil"
     
-    dificultad = "dificultad : " + dificultad
+    dificultad = "dificultad : " + dificultad_txt
     push_score = [user, dificultad, time_push, ratio]
     users_scores.append(push_score)
     menu(user)
