@@ -63,7 +63,7 @@ def sign_up():
 
         else:
             New_User = New_User.upper()
-            Push_p_score = [New_User,[]]
+            Push_p_score = [New_User,[],[]]
             Push_User = [New_User, pasword]
             Push_User_Score = [New_User, "dificultad : NULL", "0 : 0", "ratio : 0"]
             users.append(New_User)
