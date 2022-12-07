@@ -322,9 +322,16 @@ def game(dificultad, user):
     transition()
     game_final(user)
         
-def game_final(user):
+def game_final(user, lista_original, lista_user):
     time.sleep(0.5)
     clear_output()
+    for i in range (0, (len(lista_original) - 1)):
+        print(lista_original[i])
+        print(lista_user[i])
+        if lista_original[i] == lista_user[i]:
+            print ("esta frase se completó sin errores")
+        else:
+            print ("esta frase se completó con errores")
     scores_particular(user)
     ranking()
     rank = get_ranking(user)
@@ -409,6 +416,26 @@ def menu(user_menu):
             time.sleep(0.5)
             clear_output()
             print("DESEA VER LOS PUNTAJES :")
+            print("1) particulares")
+            print("2) generales")
+            print("3) cancelar")
+
+            selector = input("seleccione la opcion que desee")
+
+            if selector == 1:
+                time.sleep(0.5)
+                clear_output()
+                scores_particular(user)
+                ranking()
+                rank = get_ranking(user)
+                print ("Felicidades actualmente te encuentras en el top : {}" .format( rank))
+
+
+            elif selector == 2:
+                scores_general(user)
+            elif selector == 3:
+                menu(user)
+
 
         elif answer == 3:
             transition()
