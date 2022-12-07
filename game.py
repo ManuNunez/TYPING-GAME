@@ -320,7 +320,7 @@ def game(dificultad, user):
     users_scores.append(push_score)
 
     transition()
-    game_final(user)
+    game_final(user, lista_original, lista_user)
         
 def game_final(user, lista_original, lista_user):
     time.sleep(0.5)
