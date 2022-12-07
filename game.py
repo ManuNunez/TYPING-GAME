@@ -15,6 +15,7 @@ user = "default"
 
 
 def login(user_login):
+
     time.sleep(0.05)
     clear_output()
     print("\033[1;34m"+"                          _____ _   _ _____ _____ _____          _____        _____ ______  _____ _____ ____  _   _ ")
@@ -41,6 +42,7 @@ def login(user_login):
 
 
 def sign_up():
+
     time.sleep(0.05)
     clear_output()
     print("\033[1;34m"+"                                          _____  ______ _____ _____  _____ _______ _____   _____  ")
@@ -61,7 +63,7 @@ def sign_up():
 
         else:
             New_User = New_User.upper()
-            Push_p_score = [user]
+            Push_p_score = [New_User,[]]
             Push_User = [New_User, pasword]
             Push_User_Score = [New_User, "dificultad : NULL", "0 : 0", "ratio : 0"]
             users.append(New_User)
@@ -77,6 +79,7 @@ def sign_up():
 
 
 def log_out(user_logout):
+
     user = "default"
     menu(user)
 
@@ -94,6 +97,7 @@ list_frases_dificil = ["inteligencia es la habilidad de adaptarsea al cambio", "
 
 
 def listas(dificultad):
+
     list = []
     if dificultad == 1:
         list = list_frases_facil
@@ -110,6 +114,7 @@ def listas(dificultad):
 
 
 def inversor():
+
     counter = -1
     while counter > -5:
         new_list = new_list.apend(users_scores[counter])
@@ -118,6 +123,7 @@ def inversor():
 
 
 def sort(arg):
+
     global users_scores
     if arg == 1:
         newlist = sorted(users_scores, key=lambda x: x[0])
@@ -162,6 +168,7 @@ def get_ranking(user):
     return rank
 
 def scores_particular(user):
+
     for element in users_scores_p:
         if element[0] == user:
             score_l = element[1]
@@ -174,6 +181,7 @@ def scores_particular(user):
             
 
 def scores_general():
+
     time.sleep(0.005)
     clear_output()
     print("para salir presione : 0")
@@ -200,6 +208,7 @@ def scores_general():
 
 
 def start_game(user_game):
+
     time.sleep(0.05)
     clear_output()
     print("SELECCIONE LA DIFICULTAD DE JUEGO")
@@ -213,6 +222,7 @@ def start_game(user_game):
 
 
 def comparador(lista_original, lista_usuario, dificultad):
+
     m = 0
     n = 0
     total_score = 0
@@ -282,6 +292,7 @@ def comparador(lista_original, lista_usuario, dificultad):
 
 
 def game(dificultad, user):
+
     transition()
     lista_original = listas(dificultad)
     lista_user = []
@@ -323,6 +334,7 @@ def game(dificultad, user):
     game_final(user, lista_original, lista_user)
         
 def game_final(user, lista_original, lista_user):
+
     time.sleep(0.5)
     clear_output()
     for i in range (0, (len(lista_original) - 1)):
@@ -361,6 +373,7 @@ def transition():
 def menu(user_menu):
     time.sleep(0.05)
     clear_output()
+
     if user_menu == "default":
         print("\033[1;34m"+"         _ _    _ ______ _____  ____    _____  ______   __  __ ______ _____          _   _  ____   _____ _____            ______ _____          ")
         print("\033[1;34m"+"        | | |  | |  ____/ ____|/ __ \  |  __ \|  ____| |  \/  |  ____/ ____|   /\   | \ | |/ __ \ / ____|  __ \     /\   |  ____|_   _|   /\    ")
@@ -392,6 +405,7 @@ def menu(user_menu):
             pass
         else:
             print ("LA OPCION MARCADA ES INEXISTENTE")
+
     if user_menu in users:
         print("\033[1;34m"+"         _ _    _ ______ _____  ____    _____  ______   __  __ ______ _____          _   _  ____   _____ _____            ______ _____          ")
         print("\033[1;34m"+"        | | |  | |  ____/ ____|/ __ \  |  __ \|  ____| |  \/  |  ____/ ____|   /\   | \ | |/ __ \ / ____|  __ \     /\   |  ____|_   _|   /\    ")
