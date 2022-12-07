@@ -5,6 +5,7 @@ import getpass
 
 # DBs
 
+users_scores_p = []
 users_login = [["RZL", "123"]]
 users = ["RZL", ]
 users_scores = [["RZL", "dificultad : NULL", "0 : 0", "pts : 0"], ["MAN", "dificultad : 1", "0 : 0", "pts: 0"]]
@@ -60,11 +61,13 @@ def sign_up():
 
         else:
             New_User = New_User.upper()
+            Push_p_score = [user]
             Push_User = [New_User, pasword]
             Push_User_Score = [New_User, "dificultad : NULL", "0 : 0", "ratio : 0"]
             users.append(New_User)
             users_login.append(Push_User)
             users_scores.append(Push_User_Score)
+            users_scores_p.append(Push_p_score)
             time.sleep(1)
             clear_output()
             user = New_User
@@ -136,9 +139,40 @@ def sort(arg):
         users_scores = newlist
         inversor()
 
+def ranking ():
 
-def scores_particular():
-    pass
+    global users_scores_p
+    list_s = sorted(users_scores_p, reverse = True, key = lambda x: x[2])
+    users_scores_p = list_s
+    top_5 = [users_scores_p[0], users_scores_p[1], users_scores_p[2], users_scores_p[3], users_scores[4]]
+    for elements in top_5:
+        print (elements)
+
+
+
+def get_ranking(user):
+    
+    global users_scores_p
+
+    for i in range(0, (len(users_scores_p) - 1)):
+        check = users_scores_p [i]
+        if check[0] == user:
+            rank = i + 1
+    
+    return rank
+
+def scores_particular(user):
+    for element in users_scores_p:
+        if element[0] == user:
+            score_l = element[1]
+            for i in range (0, len(score_l- 1)):
+                pts = score_l[i]
+                print ("\n partida {} : {}" .format((i + 1), pts))
+                score_t += pts
+            print ("tu puntaje global es : {}" .format(score_t))
+            
+            
+
 def scores_general():
     time.sleep(0.005)
     clear_output()
@@ -173,7 +207,7 @@ def start_game(user_game):
     print("2- MEDIO")
     print("3- DIFICIL")
     dificultad = int(input())
-    game(dificultad)
+    game(dificultad, user_game)
     time.sleep(0.005)
     clear_output()
 
@@ -247,7 +281,8 @@ def comparador(lista_original, lista_usuario, dificultad):
     return total_score
 
 
-def game(dificultad):
+def game(dificultad, user):
+    transition()
     lista_original = listas(dificultad)
     lista_user = []
     time_1 = time.time()
@@ -267,6 +302,12 @@ def game(dificultad):
     ratio = "ratio : " + str(calificacion)
     dificultad_txt = 0
 
+    for elements in users_scores_p:
+        if element[0] == user:
+            element[1].apend(calificacion)
+            element[2] = sum(element[1])
+            
+
     if dificultad == 1:
         dificultad_txt = "facil"
     elif dificultad == 2:
@@ -277,10 +318,38 @@ def game(dificultad):
     dificultad = "dificultad : " + dificultad_txt
     push_score = [user, dificultad, time_push, ratio]
     users_scores.append(push_score)
-    menu(user)
+
+    transition()
+    game_final(user)
         
+def game_final(user):
+    time.sleep(0.5)
+    clear_output()
+    scores_particular(user)
+    ranking()
+    rank = get_ranking(user)
+    print ("Felicidades actualmente te encuentras en el top : {}" .format( rank))
+
 
 # main menu
+
+def transition():
+
+    time.sleep(0.2)
+    clear_output() 
+    print("cargando ")
+    
+    time.sleep(0.2)
+    clear_output()
+    print("cargando . ")
+
+    time.sleep(0.2)
+    clear_output()
+    print("cargando . . ")
+
+    time.sleep(0.2)
+    clear_output()
+    print("cargando . . .")
 
 def menu(user_menu):
     time.sleep(0.05)
@@ -303,12 +372,15 @@ def menu(user_menu):
         answer = int(input())
 
         if answer == 1:
+            transition()
             login(user)
         elif answer == 2:
+            transition()
             sign_up()
 
         elif answer == 3:
-            scores_general()
+            transition()
+            scores_particular(user)
         elif answer == 4:
             pass
         else:
@@ -330,10 +402,16 @@ def menu(user_menu):
 
         answer = int(input ("SELECIONE LA OPCION QUE DESEE : "))
         if answer == 1:
+            transition()
             start_game(user)
         elif answer == 2:
-            scores_general()
+            transition()
+            time.sleep(0.5)
+            clear_output()
+            print("DESEA VER LOS PUNTAJES :")
+
         elif answer == 3:
+            transition()
             log_out(user)
         elif answer == 4:
             pass
