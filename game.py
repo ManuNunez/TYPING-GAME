@@ -234,7 +234,7 @@ def comparador(lista_original, lista_usuario, dificultad):
         u = lista_usuario[i]
         z = 0
         j = 0
-        for j in range (0, (len(m)-1)):
+        for j in range (0, (len(o)-1)):
             if u[z] == o[j]:
                 pass
 
