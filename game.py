@@ -351,10 +351,14 @@ def game(dificultad, user):
     ratio = "ratio : " + str(calificacion)
     dificultad_txt = 0
 
-    for elements in users_scores_p:
+    for i in range( 0, len(users_scores_p) ):
+        element = users_scores_p[i]
+        score_t = element[2]
+        score_p = element[1] 
         if element[0] == user:
-            element[1].apend(calificacion)
-            element[2] = sum(element[1])
+            score_p.append(calificacion)
+            score_t = sum(score_p)
+             
             
 
     if dificultad == 1:
