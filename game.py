@@ -8,7 +8,7 @@ import getpass
 users_scores_p = [["PPE", [0], [0]], ["VCN", [0], [0]], ["MIG", [0], [0]], ["SKM", [0], [0]], ["RZL", [0], [0]]]
 users_login = [["RZL", "123"], ["PPE", "123"], ["MIG", "123"], ["SKM", "123"]]
 users = ["RZL", "PPE", "VCN", "MIG", "SKM"]
-users_scores = [["RZL", "dificultad : NULL", "0 : 0", "pts : 0"], ["SKM", "dificultad : 1", "0 : 0", "pts: 0"]]
+users_scores = [["RZL", "dificultad : NULL", "0 : 0", "pts : 0"], ["SKM", "dificultad : 1", "0 : 0", "pts: 0"], ["PPE", "dificultad : 1", "0 : 0", "pts: 0"], ["MIG", "dificultad : 1", "0 : 0", "pts: 0"], ["VCN", "dificultad : 1", "0 : 0", "pts: 0"]]
 
 user = "default"
 # function login
@@ -32,6 +32,7 @@ def login(user_login):
     counter = 0
     if log in users_login:
         user = log_user
+        transition()
         menu(user)
     else:
         counter = counter + 1
@@ -213,6 +214,7 @@ def start_game(user_game):
 
     time.sleep(0.05)
     clear_output()
+    transition()
     print("SELECCIONE LA DIFICULTAD DE JUEGO")
     print("1- FACIL")
     print("2- MEDIO")
@@ -373,6 +375,7 @@ def game_final(user, lista_original, lista_user):
 
     time.sleep(0.5)
     clear_output()
+    transition()
     for i in range (0, (len(lista_original) - 1)):
         print(lista_original[i])
         print(lista_user[i])
@@ -391,8 +394,10 @@ def game_final(user, lista_original, lista_user):
         print ("1)volver al menu")
         selector = int(input())
         if selector == 1:
+            transition()
             start_game(user)
         elif selector == 2:
+            transition()
             menu(user)
         else:
             print ("esta opcion no es valida")
@@ -402,21 +407,24 @@ def game_final(user, lista_original, lista_user):
 
 def transition():
 
-    time.sleep(0.2)
+    time.sleep(1)
     clear_output() 
     print("cargando ")
     
-    time.sleep(0.2)
+    time.sleep(1)
     clear_output()
     print("cargando . ")
 
-    time.sleep(0.2)
+    time.sleep(1)
     clear_output()
     print("cargando . . ")
 
-    time.sleep(0.2)
+    time.sleep(1)
     clear_output()
     print("cargando . . .")
+
+    time.sleep(1)
+    clear_output()
 
 def menu(user_menu):
     time.sleep(0.05)
