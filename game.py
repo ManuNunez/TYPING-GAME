@@ -462,7 +462,7 @@ def menu(user_menu):
 
         elif answer == 3:
             transition()
-            scores_particular(user)
+            scores_general(user)
         elif answer == 4:
             pass
         else:
