@@ -235,60 +235,90 @@ def comparador(lista_original, lista_usuario, dificultad):
         u = lista_usuario[i]
         z = 0
         j = 0
-        for j in range (0, (len(u)-1)):
-            if u[z] == o[j]:
-                pass
+        if len(u) >= len(o):
 
-            elif u[z] != o[j] and u[z] == o[j+1]:
-                errores += 1
-                j -= 1
+            for j in range (0, (len(o)-1)):
+                if u[z] == o[j]:
+                    pass
 
-            elif u[z] != o[j] and u[z] == o[j - 1]:
-                errores += 1
-                j += 1
+                elif u[z] != o[j] and u[z] == o[j+1]:
+                    errores += 1
+                    j -= 1
 
-            elif u[z] != o[j] and u[z+1] == o[j + 1]:
-                errores += 1
+                elif u[z] != o[j] and u[z] == o[j - 1]:
+                    errores += 1
+                    j += 1
+
+                elif u[z] != o[j] and u[z+1] == o[j + 1]:
+                    errores += 1
+                
+                elif u[z] != o[j] and u[z] == o[j + 1]:
+                    errores += 1
+                    j -= 1
+                
+                elif u[z] == o[j + 1] and u[z + 1] == o[j]:
+                    errores += 1
+                    j += 1
+                    z += 1
+                
+                else :
+                    errores += 1
+
+        elif len(u) < len(o) :
+            for j in range (0, (len(u)-1)):
+                if u[z] == o[j]:
+                    pass
+
+                elif u[z] != o[j] and u[z] == o[j+1]:
+                    errores += 1
+                    j -= 1
+
+                elif u[z] != o[j] and u[z] == o[j - 1]:
+                    errores += 1
+                    j += 1
+
+                elif u[z] != o[j] and u[z+1] == o[j + 1]:
+                    errores += 1
+                
+                elif u[z] != o[j] and u[z] == o[j + 1]:
+                    errores += 1
+                    j -= 1
+                
+                elif u[z] == o[j + 1] and u[z + 1] == o[j]:
+                    errores += 1
+                    j += 1
+                    z += 1
+                
+                else :
+                    errores += 1
+
             
-            elif u[z] != o[j] and u[z] == o[j + 1]:
-                errores += 1
-                j -= 1
+            if dificultad == 1:
+                
+                if dificultad < 6:
+                    total_score += (30 - (errores * 5))
+
+
+                elif errores >= 6:
+                    total_score -= 25
+
+            elif dificultad == 2:
+                if errores < 6:
+                    total_score += (50 - (errores * 5))
+                
+
+                elif errores >= 6:
+                    total_score -= 25
+
+            elif dificultad == 3:
+                if errores < 6:
+                    total_score += (70 - (errores * 5))
+
+                elif errores >= 6:
+                    total_score -= 25
             
-            elif u[z] == o[j + 1] and u[z + 1] == o[j]:
-                errores += 1
-                j += 1
-                z += 1
-            
-            else :
-                errores += 1
-
-        
-        if dificultad == 1:
-            
-            if dificultad < 6:
-                total_score += (30 - (errores * 5))
-
-
-            elif errores >= 6:
-                total_score -= 25
-
-        elif dificultad == 2:
-            if errores < 6:
-                total_score += (50 - (errores * 5))
-            
-
-            elif errores >= 6:
-                total_score -= 25
-
-        elif dificultad == 3:
-            if errores < 6:
-                total_score += (70 - (errores * 5))
-
-            elif errores >= 6:
-                total_score -= 25
-        
-        if errores != 0:
-            bool = True
+            if errores != 0:
+                bool = True
 
     if bool == False:
         total_score = total_score * 2        
