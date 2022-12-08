@@ -104,11 +104,13 @@ def listas(dificultad):
         list = list_frases_facil
     elif dificultad == 2:
         for m in range (0, 5):
-            list = list_frases_inter[randint(0, 10)]
+            frase = list_frases_inter[randint(0, 9)]
+            list.append(frase)
+
     elif dificultad == 3:
         for m in range (0, 5):
-
-            list = list_frases_dificil[randint(0, 15)]
+            frase = list_frases_dificil[randint(0, 14)]
+            list.append(frases)
     return list
 
 # funtion scores
