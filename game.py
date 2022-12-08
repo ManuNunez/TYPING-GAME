@@ -5,10 +5,10 @@ import getpass
 
 # DBs
 
-users_scores_p = []
-users_login = [["RZL", "123"]]
-users = ["RZL", ]
-users_scores = [["RZL", "dificultad : NULL", "0 : 0", "pts : 0"], ["MAN", "dificultad : 1", "0 : 0", "pts: 0"]]
+users_scores_p = [["PPE", [0], [0]], ["VCN", [0], [0]], ["MIG", [0], [0]], ["SKM", [0], [0]], ["RZL", [0], [0]]]
+users_login = [["RZL", "123"], ["PPE", "123"], ["MIG", "123"], ["SKM", "123"]]
+users = ["RZL", "PPE", "VCN", "MIG", "SKM"]
+users_scores = [["RZL", "dificultad : NULL", "0 : 0", "pts : 0"], ["SKM", "dificultad : 1", "0 : 0", "pts: 0"]]
 
 user = "default"
 # function login
@@ -260,7 +260,7 @@ def comparador(lista_original, lista_usuario, dificultad):
             
             else :
                 errores += 1
-                
+
         
         if dificultad == 1:
             
