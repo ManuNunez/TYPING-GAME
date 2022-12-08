@@ -6,7 +6,7 @@ import getpass
 # DBs
 
 users_scores_p = [["PPE", [0], [0]], ["VCN", [0], [0]], ["MIG", [0], [0]], ["SKM", [0], [0]], ["RZL", [0], [0]]]
-users_login = [["RZL", "123"], ["PPE", "123"], ["MIG", "123"], ["SKM", "123"]]
+users_login = [["RZL", "123"], ["PPE", "123"], ["MIG", "123"], ["SKM", "123"], ["VCN", "123"]]
 users = ["RZL", "PPE", "VCN", "MIG", "SKM"]
 users_scores = [["RZL", "dificultad : NULL", "0 : 0", "pts : 0"], ["SKM", "dificultad : 1", "0 : 0", "pts: 0"], ["PPE", "dificultad : 1", "0 : 0", "pts: 0"], ["MIG", "dificultad : 1", "0 : 0", "pts: 0"], ["VCN", "dificultad : 1", "0 : 0", "pts: 0"]]
 
@@ -351,10 +351,14 @@ def game(dificultad, user):
     ratio = "ratio : " + str(calificacion)
     dificultad_txt = 0
 
-    for elements in users_scores_p:
+    for i in range( 0, len(users_scores_p) ):
+        element = users_scores_p[i]
+        score_t = element[2]
+        score_p = element[1] 
         if element[0] == user:
-            element[1].apend(calificacion)
-            element[2] = sum(element[1])
+            score_p.append(calificacion)
+            score_t = sum(score_p)
+             
             
 
     if dificultad == 1:
