@@ -161,6 +161,7 @@ def get_ranking(user):
     
     global users_scores_p
 
+    global rank
     for i in range(0, (len(users_scores_p) - 1)):
         check = users_scores_p [i]
         if check[0] == user:
@@ -383,6 +384,18 @@ def game_final(user, lista_original, lista_user):
     ranking()
     rank = get_ranking(user)
     print ("Felicidades actualmente te encuentras en el top : {}" .format( rank))
+    i = 1
+    while i > 0:
+        print ("DESEA:")
+        print ("1)volver a jugar")
+        print ("1)volver al menu")
+        selector = int(input())
+        if selector == 1:
+            start_game(user)
+        elif selector == 2:
+            menu(user)
+        else:
+            print ("esta opcion no es valida")
 
 
 # main menu
