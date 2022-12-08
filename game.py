@@ -26,8 +26,8 @@ def login(user_login):
     print("\033[1;34m"+"                         |_____|_| \_|_____\_____|_____/_/    \_\_|  \_\    |_____/|______|_____/|_____\____/|_| \_|")
     print("")
     print("\033[0;37m"+"                                          ~~PARA INICIAR SESION INGRESE SU USUARIO Y CONTRASEÑA~~")
-    log_user = input("INTRODUZCA SU USUARIO :")
-    log_password = getpass.getpass("INTRODUZCA SU CONTRASEÑA")
+    log_user = input("INTRODUZCA SU USUARIO: ")
+    log_password = getpass.getpass("INTRODUZCA SU CONTRASEÑA: ")
     log = [log_user, log_password]
     counter = 0
     if log in users_login:
@@ -55,7 +55,7 @@ def sign_up():
     print("")
     print("\033[0;37m"+"                                          ~~PARA REGISTRARSE INGRESE UN USUARIO Y CONTRASEÑA~~")
     print("\033[0;37m")
-    print("su usuario debe de ser de 3 letras de largo")
+    print("SU USUARIO DEBE DE SER DE 3 LETRAS DE LARGO")
     New_User = input("USUARIO: ")
     pasword = getpass.getpass("CONTRASEÑA: ")
     if len(New_User) == 3:
@@ -76,7 +76,7 @@ def sign_up():
             user = New_User
             menu(user)
     else:
-        print("el usuario que a introducido no tiene la longitud correcta")
+        print("EL USUARIO QUE INTRODUJO NO TIENE LA LONGITUD CORRECTA")
 
 
 def log_out(user_logout):
@@ -88,11 +88,11 @@ def log_out(user_logout):
 # Function list
 
 
-list_frases_facil = ["inteligencia es la habilidad de adaptarsea al cambio", "quien tiene paciencia tendra lo que desea", "cuando el hombre no se encuentra a si mismo, no encuentra nada", "el exito depende del esfuerzo", "una buena cabeza y un buen corazon son siempre combinaciones formidables"]
-list_frases_inter = ["inteligencia es la habilidad de adaptarsea al cambio", "quien tiene paciencia tendra lo que desea", "cuando el hombre no se encuentra a si mismo, no encuentra nada", "el exito depende del esfuerzo", "una buena cabeza y un buen corazon son siempre combinaciones formidables",
- "de todos los animales de la creacion el hombre es el unico que toma agua sin tener sed, come sin tener hambre y habla sin tener nada que decir", "todos somos muy ignorantes. lo que ocurre es que no todos ignoramos las misma s cosas", "el placer y la accion hacen que las horas parezcan cortas", "la gente se rie de mi por que soy diferente, yo me rio de ellos por que son todos iguales", "la ocasion hay que crearla, no esperar a que llegue"]
-list_frases_dificil = ["inteligencia es la habilidad de adaptarsea al cambio", "quien tiene paciencia tendra lo que desea", "cuando el hombre no se encuentra a si mismo, no encuentra nada", "el exito depende del esfuerzo", "una buena cabeza y un buen corazon son siempre combinaciones formidables",
- "de todos los animales de la creacion el hombre es el unico que toma agua sin tener sed, come sin tener hambre y habla sin tener nada que decir", "todos somos muy ignorantes. lo que ocurre es que no todos ignoramos las misma s cosas", "el placer y la accion hacen que las horas parezcan cortas", "la gente se rie de mi por que soy diferente, yo me rio de ellos por que son todos iguales", "la ocasion hay que crearla, no esperar a que llegue", 
+list_frases_facil = ["inteligencia es la habilidad de adaptarse al cambio", "quien tiene paciencia tendra lo que desea", "cuando el hombre no se encuentra a si mismo, no encuentra nada", "el exito depende del esfuerzo", "una buena cabeza y un buen corazon son siempre combinaciones formidables"]
+list_frases_inter = ["inteligencia es la habilidad de adaptarse al cambio", "quien tiene paciencia tendra lo que desea", "cuando el hombre no se encuentra a si mismo, no encuentra nada", "el exito depende del esfuerzo", "una buena cabeza y un buen corazon son siempre combinaciones formidables",
+ "de todos los animales de la creacion el hombre es el unico que toma agua sin tener sed, come sin tener hambre y habla sin tener nada que decir", "todos somos muy ignorantes. lo que ocurre es que no todos ignoramos las mismas cosas", "el placer y la accion hacen que las horas parezcan cortas", "la gente se rie de mi por que soy diferente, yo me rio de ellos por que son todos iguales", "la ocasion hay que crearla, no esperar a que llegue"]
+list_frases_dificil = ["inteligencia es la habilidad de adaptarse al cambio", "quien tiene paciencia tendra lo que desea", "cuando el hombre no se encuentra a si mismo, no encuentra nada", "el exito depende del esfuerzo", "una buena cabeza y un buen corazon son siempre combinaciones formidables",
+ "de todos los animales de la creacion el hombre es el unico que toma agua sin tener sed, come sin tener hambre y habla sin tener nada que decir", "todos somos muy ignorantes. lo que ocurre es que no todos ignoramos las mismas cosas", "el placer y la accion hacen que las horas parezcan cortas", "la gente se rie de mi por que soy diferente, yo me rio de ellos por que son todos iguales", "la ocasion hay que crearla, no esperar a que llegue", 
  "educacion es lo que queda despues de olvidar lo que se ha aprendido en la escuela", "adentro del vaticano todo estaa forrado de oro y afuere los pibes estan muriendo de hambre", "la  envidia  es una declaracion de inferioridad", "solo hay una felicidad en la vida, amar y ser amado", "no malgastes tu tiempo pues de esa materia esta formada la vida"]
 
 
@@ -177,9 +177,9 @@ def scores_particular(user):
             score_l = element[1]
             for i in range (0, len(score_l- 1)):
                 pts = score_l[i]
-                print ("\n partida {} : {}" .format((i + 1), pts))
+                print ("\n PARTIDA {}: {}" .format((i + 1), pts))
                 score_t += pts
-            print ("tu puntaje global es : {}" .format(score_t))
+            print ("TU PUNTAJE GLOGAL ES: {}" .format(score_t))
             
             
 
@@ -187,14 +187,14 @@ def scores_general():
 
     time.sleep(0.005)
     clear_output()
-    print("para salir presione : 0")
+    print("PARA SALIR PRESIONE: 0")
     for elements in users_scores:
         print("| usuario : {} | {} | {} | {} |".format(elements[0], elements[1],elements[2], elements[3]))
     
-    print("ordenar por usuario : 1")
-    print("ordenar por dificultad : 2")
-    print("ordenar por tiempo : 3")
-    print("ordenar por porcentaje de aciertos : 4")
+    print("ORDENAR POR USUARIO: 1")
+    print("ORDENAR POR DIFICULTAD: 2")
+    print("ORDENAR POR TIEMPO: 3")
+    print("ORDENAR POR PORCENTAJE DE ACIERTOS: 4")
     sort_arg = int(input())
     if sort_arg == 0 :
         menu(user)
@@ -203,7 +203,7 @@ def scores_general():
     elif sort_arg == 5:
         inversor()
     else :
-        print("el argumento introcudiodo es invalido")
+        print("EL ARGUMENTO INTRODUCIDO ES INVALIDO")
 
 
 
@@ -215,7 +215,7 @@ def start_game(user_game):
     time.sleep(0.05)
     clear_output()
     transition()
-    print("SELECCIONE LA DIFICULTAD DE JUEGO")
+    print("SELECCIONE LA DIFICULTAD DE JUEGO: ")
     print("1- FACIL")
     print("2- MEDIO")
     print("3- DIFICIL")
@@ -380,9 +380,9 @@ def game_final(user, lista_original, lista_user):
         print(lista_original[i])
         print(lista_user[i])
         if lista_original[i] == lista_user[i]:
-            print ("esta frase se completó sin errores")
+            print ("ESTA FRASE SE COMPLETÓ SIN ERRORES")
         else:
-            print ("esta frase se completó con errores")
+            print ("ESTA FRASE SE COMPLETÓ CON ERRORES")
     scores_particular(user)
     ranking()
     rank = get_ranking(user)
