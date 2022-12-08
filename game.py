@@ -6,7 +6,7 @@ import getpass
 # DBs
 
 users_scores_p = [["PPE", [0], [0]], ["VCN", [0], [0]], ["MIG", [0], [0]], ["SKM", [0], [0]], ["RZL", [0], [0]]]
-users_login = [["RZL", "123"], ["PPE", "123"], ["MIG", "123"], ["SKM", "123"]]
+users_login = [["RZL", "123"], ["PPE", "123"], ["MIG", "123"], ["SKM", "123"], ["VCN", "123"]]
 users = ["RZL", "PPE", "VCN", "MIG", "SKM"]
 users_scores = [["RZL", "dificultad : NULL", "0 : 0", "pts : 0"], ["SKM", "dificultad : 1", "0 : 0", "pts: 0"], ["PPE", "dificultad : 1", "0 : 0", "pts: 0"], ["MIG", "dificultad : 1", "0 : 0", "pts: 0"], ["VCN", "dificultad : 1", "0 : 0", "pts: 0"]]
 
