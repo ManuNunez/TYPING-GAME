@@ -342,7 +342,7 @@ def game(dificultad, user):
         time.sleep(0.005)
         clear_output()
     time_resoult = time.time() - time_1
-    time_push1 = time_resoult / 60
+    time_push1 = time_resoult // 60
     time_push2 = time_resoult % 60 
     time_format1 = str(time_push1)
     time_format2 = str(time_push2)
