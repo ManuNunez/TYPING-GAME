@@ -358,11 +358,11 @@ def game(dificultad, user):
             
 
     if dificultad == 1:
-        dificultad_txt = "facil"
+        dificultad_txt = "FACIL"
     elif dificultad == 2:
-        dificultad_txt = "media"
+        dificultad_txt = "MEDIA"
     elif dificultad == 3:
-        dificultad_txt = "dificil"
+        dificultad_txt = "DIFICIL"
     
     dificultad = "dificultad : " + dificultad_txt
     push_score = [user, dificultad, time_push, ratio]
@@ -380,18 +380,20 @@ def game_final(user, lista_original, lista_user):
         print(lista_original[i])
         print(lista_user[i])
         if lista_original[i] == lista_user[i]:
-            print ("ESTA FRASE SE COMPLETÓ SIN ERRORES")
+
+            print ("ESTA FRASE SE COMPLETO SIN ERRORES")
         else:
-            print ("ESTA FRASE SE COMPLETÓ CON ERRORES")
+            print ("ESTA FRASE SE COMPLETO CON ERRORES")
+
     scores_particular(user)
     ranking()
     rank = get_ranking(user)
-    print ("Felicidades actualmente te encuentras en el top : {}" .format( rank))
+    print ("FELICIDADES, ACTUALMENTE TE ENCUENTRAS EN EL TOP : {}" .format( rank))
     i = 1
     while i > 0:
         print ("DESEA:")
-        print ("1)volver a jugar")
-        print ("1)volver al menu")
+        print ("1)VOLVER A JUGAR ")
+        print ("2)VOLVER AL MENU ")
         selector = int(input())
         if selector == 1:
             transition()
@@ -400,7 +402,7 @@ def game_final(user, lista_original, lista_user):
             transition()
             menu(user)
         else:
-            print ("esta opcion no es valida")
+            print ("ESTA OPCION NO ES VALIDA")
 
 
 # main menu
@@ -409,19 +411,19 @@ def transition():
 
     time.sleep(1)
     clear_output() 
-    print("cargando ")
+    print("CARGANDO ")
     
     time.sleep(1)
     clear_output()
-    print("cargando . ")
+    print("CARGANDO . ")
 
     time.sleep(1)
     clear_output()
-    print("cargando . . ")
+    print("CARGANDO . . ")
 
     time.sleep(1)
     clear_output()
-    print("cargando . . .")
+    print("CARGANDO . . .")
 
     time.sleep(1)
     clear_output()
@@ -439,7 +441,7 @@ def menu(user_menu):
         print("\033[1;34m"+"    \____/ \____/|______\_____|\____/  |_____/|______| |_|  |_|______\_____/_/    \_\_| \_|\____/ \_____|_|  \_\/_/    \_\_|    |_____/_/    \_\ ")  
         print("")
         print("                                            ~~BIENVENIDO AL JUEGO DE LOS AMIGUELADOS~~")
-        print("\033[1;37m"+"Elija una opcion para continuar: ")
+        print("\033[1;37m"+"ELIJA UNA OPCION PARA CONTINUAR : ")
         print("\033[1;37m"+"1.- INICIAR SESION")
         print("\033[1;37m"+"2.- REGISTRARSE")
         print("\033[1;37m"+"3.- SCORES")
@@ -471,10 +473,10 @@ def menu(user_menu):
         print("\033[1;34m"+"    \____/ \____/|______\_____|\____/  |_____/|______| |_|  |_|______\_____/_/    \_\_| \_|\____/ \_____|_|  \_\/_/    \_\_|    |_____/_/    \_\ ")  
         print("")       
         print(                                          "BIENVENIDO {} AL JUEGO DE LOS AMIGUELADOS" .format(user))
-        print("\033[1;37m"+"Elija una opcion para continuar: ")
+        print("\033[1;37m"+"ELIJA UNA OPCION PARA CONTINUAR : ")
         print("\033[1;37m"+"1.- JUGAR")
         print("\033[1;37m"+"2.- SCORES")
-        print("\033[1;37m"+"2.- CERRAR SESION")
+        print("\033[1;37m"+"3.- CERRAR SESION")
         print("\033[1;37m"+"4.- SALIR")
 
         answer = int(input ("SELECIONE LA OPCION QUE DESEE : "))
@@ -486,11 +488,11 @@ def menu(user_menu):
             time.sleep(0.5)
             clear_output()
             print("DESEA VER LOS PUNTAJES :")
-            print("1) particulares")
-            print("2) generales")
-            print("3) cancelar")
+            print("1) PARTICULARES")
+            print("2) GENERALES")
+            print("3) CANCELAR")
 
-            selector = input("seleccione la opcion que desee")
+            selector = input("SELECCIONE LA OPCION QUE DESEE : ")
 
             if selector == 1:
                 time.sleep(0.5)
