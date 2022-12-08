@@ -238,18 +238,18 @@ def comparador(lista_original, lista_usuario, dificultad):
             if u[z] == o[j]:
                 pass
 
-            elif u[z] != o[j] and n[z] == m[j+1]:
+            elif u[z] != o[j] and u[z] == o[j+1]:
                 errores += 1
                 j -= 1
 
-            elif u[z] != o[j] and u[z] == m[j - 1]:
+            elif u[z] != o[j] and u[z] == o[j - 1]:
                 errores += 1
                 j += 1
 
             elif u[z] != o[j] and u[z+1] == o[j + 1]:
                 errores += 1
             
-            elif u[z] != o[j] and u[z] == m[j + 1]:
+            elif u[z] != o[j] and u[z] == o[j + 1]:
                 errores += 1
                 j -= 1
             
@@ -257,6 +257,10 @@ def comparador(lista_original, lista_usuario, dificultad):
                 errores += 1
                 j += 1
                 z += 1
+            
+            else :
+                errores += 1
+                
         
         if dificultad == 1:
             
