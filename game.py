@@ -36,7 +36,7 @@ def login(user_login):
         menu(user)
     else:
         counter = counter + 1
-        print("LOS DATOS INTRODUCIDOS SON INCORRECTOS")
+        print("\033[0;37m"+"LOS DATOS INTRODUCIDOS SON INCORRECTOS")
         while counter < 3:
             login(user)
 # function sign_up
@@ -60,7 +60,7 @@ def sign_up():
     pasword = getpass.getpass("CONTRASEÑA: ")
     if len(New_User) == 3:
         if New_User in users:
-            print("LO SENTIMOS PERO ESE USUARIO YA ESTA OCUPADO")
+            print("\033[0;37m"+"LO SENTIMOS PERO ESE USUARIO YA ESTA OCUPADO")
 
         else:
             New_User = New_User.upper()
@@ -76,7 +76,7 @@ def sign_up():
             user = New_User
             menu(user)
     else:
-        print("EL USUARIO QUE INTRODUJO NO TIENE LA LONGITUD CORRECTA")
+        print("\033[0;37m"+"EL USUARIO QUE INTRODUJO NO TIENE LA LONGITUD CORRECTA")
 
 
 def log_out(user_logout):
@@ -179,7 +179,7 @@ def scores_particular(user):
                 pts = score_l[i]
                 print ("\n PARTIDA {}: {}" .format((i + 1), pts))
                 score_t += pts
-            print ("TU PUNTAJE GLOGAL ES: {}" .format(score_t))
+            print ("\033[0;37m"+"TU PUNTAJE GLOGAL ES: {}" .format(score_t))
             
             
 
@@ -187,14 +187,14 @@ def scores_general():
 
     time.sleep(0.005)
     clear_output()
-    print("PARA SALIR PRESIONE: 0")
+    print("\033[0;37m"+"PARA SALIR PRESIONE: 0")
     for elements in users_scores:
         print("| usuario : {} | {} | {} | {} |".format(elements[0], elements[1],elements[2], elements[3]))
     
-    print("ORDENAR POR USUARIO: 1")
-    print("ORDENAR POR DIFICULTAD: 2")
-    print("ORDENAR POR TIEMPO: 3")
-    print("ORDENAR POR PORCENTAJE DE ACIERTOS: 4")
+    print("\033[0;37m"+"ORDENAR POR USUARIO: 1")
+    print("\033[0;37m"+"ORDENAR POR DIFICULTAD: 2")
+    print("\033[0;37m"+"ORDENAR POR TIEMPO: 3")
+    print("\033[0;37m"+"ORDENAR POR PORCENTAJE DE ACIERTOS: 4")
     sort_arg = int(input())
     if sort_arg == 0 :
         menu(user)
@@ -203,7 +203,7 @@ def scores_general():
     elif sort_arg == 5:
         inversor()
     else :
-        print("EL ARGUMENTO INTRODUCIDO ES INVALIDO")
+        print("\033[0;37m"+"EL ARGUMENTO INTRODUCIDO ES INVALIDO")
 
 
 
@@ -215,10 +215,10 @@ def start_game(user_game):
     time.sleep(0.05)
     clear_output()
     transition()
-    print("SELECCIONE LA DIFICULTAD DE JUEGO: ")
-    print("1- FACIL")
-    print("2- MEDIO")
-    print("3- DIFICIL")
+    print("\033[0;37m"+"SELECCIONE LA DIFICULTAD DE JUEGO: ")
+    print("\033[0;37m"+"1- FACIL")
+    print("\033[0;37m"+"2- MEDIO")
+    print("\033[0;37m"+"3- DIFICIL")
     dificultad = int(input())
     game(dificultad, user_game)
     time.sleep(0.005)
@@ -381,19 +381,19 @@ def game_final(user, lista_original, lista_user):
         print(lista_user[i])
         if lista_original[i] == lista_user[i]:
 
-            print ("ESTA FRASE SE COMPLETO SIN ERRORES")
+            print ("\033[0;37m"+"ESTA FRASE SE COMPLETO SIN ERRORES")
         else:
-            print ("ESTA FRASE SE COMPLETO CON ERRORES")
+            print ("\033[0;37m"+"ESTA FRASE SE COMPLETO CON ERRORES")
 
     scores_particular(user)
     ranking()
     rank = get_ranking(user)
-    print ("FELICIDADES, ACTUALMENTE TE ENCUENTRAS EN EL TOP : {}" .format( rank))
+    print ("\033[0;37m"+"FELICIDADES, ACTUALMENTE TE ENCUENTRAS EN EL TOP: {}" .format( rank))
     i = 1
     while i > 0:
-        print ("DESEA:")
-        print ("1)VOLVER A JUGAR ")
-        print ("2)VOLVER AL MENU ")
+        print ("\033[0;37m"+"DESEA:")
+        print ("\033[0;37m"+"1)VOLVER A JUGAR ")
+        print ("\033[0;37m"+"2)VOLVER AL MENU ")
         selector = int(input())
         if selector == 1:
             transition()
@@ -402,7 +402,7 @@ def game_final(user, lista_original, lista_user):
             transition()
             menu(user)
         else:
-            print ("ESTA OPCION NO ES VALIDA")
+            print ("\033[0;37m"+"ESTA OPCION NO ES VALIDA")
 
 
 # main menu
@@ -411,19 +411,19 @@ def transition():
 
     time.sleep(1)
     clear_output() 
-    print("CARGANDO ")
+    print("\033[0;37m"+"CARGANDO ")
     
     time.sleep(1)
     clear_output()
-    print("CARGANDO . ")
+    print("\033[0;37m"+"CARGANDO . ")
 
     time.sleep(1)
     clear_output()
-    print("CARGANDO . . ")
+    print("\033[0;37m"+"CARGANDO . . ")
 
     time.sleep(1)
     clear_output()
-    print("CARGANDO . . .")
+    print("\033[0;37m"+"CARGANDO . . .")
 
     time.sleep(1)
     clear_output()
@@ -441,11 +441,11 @@ def menu(user_menu):
         print("\033[1;34m"+"    \____/ \____/|______\_____|\____/  |_____/|______| |_|  |_|______\_____/_/    \_\_| \_|\____/ \_____|_|  \_\/_/    \_\_|    |_____/_/    \_\ ")  
         print("")
         print("                                            ~~BIENVENIDO AL JUEGO DE LOS AMIGUELADOS~~")
-        print("\033[1;37m"+"ELIJA UNA OPCION PARA CONTINUAR : ")
-        print("\033[1;37m"+"1.- INICIAR SESION")
-        print("\033[1;37m"+"2.- REGISTRARSE")
-        print("\033[1;37m"+"3.- SCORES")
-        print("\033[1;37m"+"4.- SALIR")
+        print("\033[0;37m"+"ELIJA UNA OPCION PARA CONTINUAR : ")
+        print("\033[0;37m"+"1.- INICIAR SESION")
+        print("\033[0;37m"+"2.- REGISTRARSE")
+        print("\033[0;37m"+"3.- SCORES")
+        print("\033[0;37m"+"4.- SALIR")
 
         answer = int(input())
 
@@ -473,11 +473,11 @@ def menu(user_menu):
         print("\033[1;34m"+"    \____/ \____/|______\_____|\____/  |_____/|______| |_|  |_|______\_____/_/    \_\_| \_|\____/ \_____|_|  \_\/_/    \_\_|    |_____/_/    \_\ ")  
         print("")       
         print(                                          "BIENVENIDO {} AL JUEGO DE LOS AMIGUELADOS" .format(user))
-        print("\033[1;37m"+"ELIJA UNA OPCION PARA CONTINUAR : ")
-        print("\033[1;37m"+"1.- JUGAR")
-        print("\033[1;37m"+"2.- SCORES")
-        print("\033[1;37m"+"3.- CERRAR SESION")
-        print("\033[1;37m"+"4.- SALIR")
+        print("\033[0;37m"+"ELIJA UNA OPCION PARA CONTINUAR : ")
+        print("\033[0;37m"+"1.- JUGAR")
+        print("\033[0;37m"+"2.- SCORES")
+        print("\033[0;37m"+"3.- CERRAR SESION")
+        print("\033[0;37m"+"4.- SALIR")
 
         answer = int(input ("SELECIONE LA OPCION QUE DESEE : "))
         if answer == 1:
@@ -487,12 +487,12 @@ def menu(user_menu):
             transition()
             time.sleep(0.5)
             clear_output()
-            print("DESEA VER LOS PUNTAJES :")
-            print("1) PARTICULARES")
-            print("2) GENERALES")
-            print("3) CANCELAR")
+            print("\033[0;37m"+"DESEA VER LOS PUNTAJES :")
+            print("\033[0;37m"+"1) PARTICULARES")
+            print("\033[0;37m"+"2) GENERALES")
+            print("\033[0;37m"+"3) CANCELAR")
 
-            selector = input("SELECCIONE LA OPCION QUE DESEE : ")
+            selector = input("\033[0;37m"+"SELECCIONE LA OPCION QUE DESEE: ")
 
             if selector == 1:
                 time.sleep(0.5)
@@ -500,7 +500,7 @@ def menu(user_menu):
                 scores_particular(user)
                 ranking()
                 rank = get_ranking(user)
-                print ("Felicidades actualmente te encuentras en el top : {}" .format( rank))
+                print ("\033[0;37m"+"FELICIDADES, ACTUALMENTE TE ENCUENTRAS EN EL TOP: {}" .format( rank))
 
 
             elif selector == 2:
@@ -515,7 +515,7 @@ def menu(user_menu):
         elif answer == 4:
             pass
         else:
-            print ("LA OPCION MARCADA ES INEXISTENTE")
+            print ("\033[0;37m"+"LA OPCION MARCADA ES INEXISTENTE")
 
 
 menu(user)
