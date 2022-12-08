@@ -125,6 +125,7 @@ def inversor():
 def sort(arg):
 
     global users_scores
+
     if arg == 1:
         newlist = sorted(users_scores, key=lambda x: x[0])
         users_scores = newlist
@@ -148,11 +149,11 @@ def sort(arg):
 def ranking ():
 
     global users_scores_p
+
     list_s = sorted(users_scores_p, reverse = True, key = lambda x: x[2])
     users_scores_p = list_s
-    top_5 = [users_scores_p[0], users_scores_p[1], users_scores_p[2], users_scores_p[3], users_scores[4]]
-    for elements in top_5:
-        print (elements)
+    for i in range(0, (len(list_s) - 1)):
+        print (users_scores_p[i])
 
 
 
@@ -234,7 +235,7 @@ def comparador(lista_original, lista_usuario, dificultad):
         u = lista_usuario[i]
         z = 0
         j = 0
-        for j in range (0, (len(o)-1)):
+        for j in range (0, (len(u)-1)):
             if u[z] == o[j]:
                 pass
 
